@@ -1,0 +1,21 @@
+{{!< default}}
+
+<h1>Reviews</h1>
+
+<div class="reviews-grid">
+    {{#foreach posts}}
+        <article class="review-card">
+            {{#if feature_image}}
+                <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+            {{/if}}
+
+            <h2>
+                <a href="{{url}}">
+                    {{title}}
+                </a>
+            </h2>
+
+            <p>{{excerpt}}</p>
+        </article>
+    {{/foreach}}
+</div>

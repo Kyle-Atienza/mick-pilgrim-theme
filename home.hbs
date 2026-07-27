@@ -1,0 +1,93 @@
+{{!< default}}
+
+<main>
+
+    <section class="hero">
+        <h1>Welcome to the website</h1>
+    </section>
+
+    {{! Featured Reviews }}
+    <section class="homepage-reviews">
+
+        <h2>Latest Reviews</h2>
+
+        {{#get
+            "posts"
+            filter="tag:hash-type-review"
+            limit="3"
+            include="tags,authors"
+            order="published_at desc"
+        }}
+
+            {{#foreach posts}}
+
+                <article class="review-card">
+
+                    {{#if feature_image}}
+                        <img
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{title}}"
+                        />
+                    {{/if}}
+
+                    <h3>
+                        <a href="{{url}}">
+                            {{title}}
+                        </a>
+                    </h3>
+
+                    <p>{{excerpt}}</p>
+
+                </article>
+
+            {{/foreach}}
+
+        {{/get}}
+
+        <a href="/reviews/">View all reviews</a>
+
+    </section>
+
+    {{! Featured Features }}
+    <section class="homepage-features">
+
+        <h2>Featured Stories</h2>
+
+        {{#get
+            "posts"
+            filter="tag:hash-type-feature"
+            limit="3"
+            include="tags,authors"
+            order="published_at desc"
+        }}
+
+            {{#foreach posts}}
+
+                <article class="feature-card">
+
+                    {{#if feature_image}}
+                        <img
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{title}}"
+                        />
+                    {{/if}}
+
+                    <h3>
+                        <a href="{{url}}">
+                            {{title}}
+                        </a>
+                    </h3>
+
+                    <p>{{excerpt}}</p>
+
+                </article>
+
+            {{/foreach}}
+
+        {{/get}}
+
+        <a href="/features/">View all features</a>
+
+    </section>
+
+</main>

@@ -1,93 +1,153 @@
 {{!< default}}
 
-<main>
-
-    <section class="hero">
+<section class="hero">
+    <div class="hero__inner gh-container">
+        <span>Special Feature Section</span>
         <h1>Welcome to the website</h1>
-    </section>
+    </div>
+</section>
 
-    {{! Featured Reviews }}
-    <section class="homepage-reviews">
-
+{{! Featured Reviews }}
+<section class="reviews">
+    <div class="reviews__inner gh-container">
         <h2>Latest Reviews</h2>
+        <div class="featured-reviews">
+            {{#get
+                "posts"
+                filter="tag:hash-type-review"
+                limit="3"
+                include="tags,authors"
+                order="published_at desc"
+            }}
+                {{#foreach posts}}
+                    <article class="featured-review">
+                        {{#if feature_image}}
+                            <img
+                                class="featured-review__image"
+                                src="{{img_url feature_image size="m"}}"
+                                alt="{{title}}"
+                            />
+                        {{/if}}
+                        <div class="featured-review__title">
+                            <h3>
+                                <a href="{{url}}">
+                                    {{title}}
+                                </a>
+                            </h3>
+                        </div>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
 
-        {{#get
-            "posts"
-            filter="tag:hash-type-review"
-            limit="3"
-            include="tags,authors"
-            order="published_at desc"
-        }}
+        <div class="reviews-cta">
+            <a class="gh-button" href="/reviews/">View all reviews</a>
+        </div>
+    </div>
 
-            {{#foreach posts}}
+</section>
 
-                <article class="review-card">
+{{! Featured Features }}
+<section class="features">
+    <div class="features__inner gh-container">
+        <h2>Features</h2>
+        <div class="featured-features">
+            {{#get
+                "posts"
+                filter="tag:hash-type-feature"
+                limit="3"
+                include="tags,authors"
+                order="published_at desc"
+            }}
+                {{#foreach posts}}
+                    <article class="featured-feature">
+                        {{#if feature_image}}
+                            <img
+                                class="featured-feature__image"
+                                src="{{img_url feature_image size="m"}}"
+                                alt="{{title}}"
+                            />
+                        {{/if}}
+                        <div class="featured-feature__content">
+                            <h3>
+                                <a href="{{url}}">
+                                    {{title}}
+                                </a>
+                            </h3>
+                            <p>{{excerpt}}</p>
+                        </div>
 
-                    {{#if feature_image}}
-                        <img
-                            src="{{img_url feature_image size="m"}}"
-                            alt="{{title}}"
-                        />
-                    {{/if}}
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+        <div class="features-cta">
+            <a class="gh-button" href="/features/">See more</a>
+        </div>
+    </div>
 
-                    <h3>
-                        <a href="{{url}}">
-                            {{title}}
-                        </a>
-                    </h3>
+</section>
 
-                    <p>{{excerpt}}</p>
+<section class="about-me">
+    <div class="about-me__inner gh-container">
+        <img src="" alt="" class="profile__image" />
+        <div class="profile__content">
+            <span class="profile__subtitle">
+                About Mick Pilgrim
+            </span>
+            <h3 class="profile__title">Lorem Ipsum Dolor Sit Amet</h3>
+            <div class="profile__description">
+                <p>Mick Pilgrim is the online persona of Mark Peregrino, who’s
+                    best known for his film review videos that cover new
+                    releases, world cinema classics, and underrated gems, with a
+                    special focus on Asian and queer cinema. As a content
+                    creator, he’s collaborated with media brands like ArtScience
+                    Museum, Asian Film Archive, HBO, Japan Cuts, Neon, Pacific
+                    Arts Movement, Placate the Gods, The Projector, Singapore
+                    International Film Festival, and TikTok.
+                </p>
+                <p>
+                    Apart from his film reviews, he also features film-related
+                    personalities, indie cinemas, movie merch, and movie-related
+                    events. His mission is to promote film culture in the
+                    digital age, and he aims to partner with like-minded
+                    individuals and brands that would help him achieve this
+                    goal.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-                </article>
+<section class="contact">
+    <div class="gh-container contact__inner">
+        <h3 class="contact__title">Let's talk</h3>
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input class="gh-input" type="text" name="name" id="name" />
 
-            {{/foreach}}
+            <label for="email">Email Address</label>
+            <input class="gh-input" type="email" name="email" id="email" />
 
-        {{/get}}
+            <label for="message">How can I help you?</label>
+            <textarea
+                class="gh-textarea"
+                name="message"
+                id="message"
+            ></textarea>
 
-        <a href="/reviews/">View all reviews</a>
-
-    </section>
-
-    {{! Featured Features }}
-    <section class="homepage-features">
-
-        <h2>Featured Stories</h2>
-
-        {{#get
-            "posts"
-            filter="tag:hash-type-feature"
-            limit="3"
-            include="tags,authors"
-            order="published_at desc"
-        }}
-
-            {{#foreach posts}}
-
-                <article class="feature-card">
-
-                    {{#if feature_image}}
-                        <img
-                            src="{{img_url feature_image size="m"}}"
-                            alt="{{title}}"
-                        />
-                    {{/if}}
-
-                    <h3>
-                        <a href="{{url}}">
-                            {{title}}
-                        </a>
-                    </h3>
-
-                    <p>{{excerpt}}</p>
-
-                </article>
-
-            {{/foreach}}
-
-        {{/get}}
-
-        <a href="/features/">View all features</a>
-
-    </section>
-
-</main>
+            <button
+                type="submit"
+                class="contact-form__submit gh-button"
+            >Send</button>
+        </form>
+        <span class="contact__alt-message">Or email me at:
+            <a
+                href="mailto:workwithmickpilgrim@gmail.com"
+            >workwithmickpilgrim@gmail.com</a></span>
+    </div>
+</section>
+<div class="gh-page">
+    <div class="gh-container">
+    </div>
+</div>

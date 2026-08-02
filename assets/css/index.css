@@ -25,11 +25,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
-
+@import "page/home.css";
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
-
 html,
 .gh-viewport {
     display: flex;
@@ -67,6 +66,7 @@ html,
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 32px;
 }
 
 .gh-head-actions a:not(.gh-button) {
@@ -113,7 +113,6 @@ html,
     aspect-ratio: 16 / 9;
 }
 
-
 .gh-card-meta {
     display: block;
     margin: 0 0 1rem;
@@ -144,7 +143,6 @@ html,
     opacity: 0.75;
 }
 
-
 /* Page
 /* ---------------------------------------------------------- */
 
@@ -172,7 +170,6 @@ html,
         font-size: 1.6rem;
     }
 }
-
 
 /* Post
 /* ---------------------------------------------------------- */
@@ -210,7 +207,6 @@ html,
     margin: 2rem 0;
 }
 
-
 /* Author Archive
 /* ---------------------------------------------------------- */
 
@@ -247,7 +243,7 @@ html,
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     transform: rotate(20deg);
 }
 

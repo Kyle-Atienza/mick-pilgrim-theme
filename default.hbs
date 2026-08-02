@@ -16,8 +16,7 @@
         <div class="gh-viewport">
 
             <header id="gh-head" class="gh-head">
-                <nav class="gh-head-inner gh-container">
-
+                <nav class="gh-head-inner">
                     <div class="gh-head-brand">
                         <a class="gh-head-logo" href="{{@site.url}}">
                             {{#if @site.logo}}
@@ -41,19 +40,6 @@
                     <div class="gh-head-actions">
                         <div class="gh-head-actions-list">
                             {{search}}
-                            {{#if @site.members_enabled}}
-                                {{#if @member}}
-                                    <a
-                                        class="gh-button"
-                                        href="#/portal/account"
-                                    >Account</a>
-                                {{else}}
-                                    <a
-                                        class="gh-button"
-                                        href="{{@site.signup_url}}"
-                                    >Subscribe</a>
-                                {{/if}}
-                            {{/if}}
                         </div>
                     </div>
                 </nav>

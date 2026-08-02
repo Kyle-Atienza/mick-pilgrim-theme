@@ -5,16 +5,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8vmin 4vmin 4vmin;
+    padding: 4vmin 8vmin;
 }
 
 .gh-foot .gh-container {
-    width: auto;
+    max-width: unset;
+}
+
+.gh-foot-inner {
+    display: flex;
+    justify-content: space-between;
 }
 
 .gh-foot a {
     color: inherit;
 }
+
+/* .gh-foot-brand {
+} */
 
 .gh-foot-menu {
     display: flex;

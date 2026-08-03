@@ -37,6 +37,10 @@
 /* Share YouTube
 /* ---------------------------------------------------------- */
 
+.share-youtube__inner {
+    padding: 0 !important;
+}
+
 .share-youtube__wrapper {
     padding: 74px;
     border: 1px solid orange;

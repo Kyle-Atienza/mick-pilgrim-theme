@@ -1,0 +1,59 @@
+.admin-title {
+    margin-bottom: 24px;
+}
+
+/* Custom YouTube embed
+/* ---------------------------------------------------------- */
+
+.custom-youtube-embed input {
+    margin-bottom: 24px;
+}
+
+.custom-youtube-embed .admin-section__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+}
+
+.admin-section-code-wrapper {
+    position: relative;
+}
+
+.admin-section-code-wrapper pre {
+    height: 100%;
+    margin: 0;
+    padding: 24px;
+
+    overflow: auto;
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    max-height: 200px;
+    overflow: auto;
+}
+
+.admin-section-code {
+    white-space: pre-wrap;
+}
+
+.admin-copy-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+
+    background: var(--color-background);
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.admin-copy-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

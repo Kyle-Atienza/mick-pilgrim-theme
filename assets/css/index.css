@@ -25,7 +25,13 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
+/* Pages */
 @import "page/home.css";
+@import "page/post-feature.css";
+
+/* partials */
+@import "partials/contact.css";
+@import "partials/post-grid.css";
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */

@@ -8,44 +8,12 @@
 </section>
 
 {{! Featured Reviews }}
-<section class="reviews">
-    <div class="reviews__inner gh-container">
-        <h2>Latest Reviews</h2>
-        <div class="featured-reviews">
-            {{#get
-                "posts"
-                filter="tag:hash-type-review"
-                limit="3"
-                include="tags,authors"
-                order="published_at desc"
-            }}
-                {{#foreach posts}}
-                    <article class="featured-review">
-                        {{#if feature_image}}
-                            <img
-                                class="featured-review__image"
-                                src="{{img_url feature_image size="m"}}"
-                                alt="{{title}}"
-                            />
-                        {{/if}}
-                        <div class="featured-review__title">
-                            <h3>
-                                <a href="{{url}}">
-                                    {{title}}
-                                </a>
-                            </h3>
-                        </div>
-                    </article>
-                {{/foreach}}
-            {{/get}}
-        </div>
-
-        <div class="reviews-cta">
-            <a class="gh-button" href="/reviews/">View all reviews</a>
-        </div>
-    </div>
-
-</section>
+{{> "post-grid"
+    title="Latest Reviews"
+    filter="tag:hash-type-review"
+    ctaLabel="View all reviews"
+    ctaLink="/reviews/"
+}}
 
 {{! Featured Features }}
 <section class="features">
@@ -119,35 +87,4 @@
     </div>
 </section>
 
-<section class="contact">
-    <div class="gh-container contact__inner">
-        <h3 class="contact__title">Let's talk</h3>
-        <form class="contact-form">
-            <label for="name">Name</label>
-            <input class="gh-input" type="text" name="name" id="name" />
-
-            <label for="email">Email Address</label>
-            <input class="gh-input" type="email" name="email" id="email" />
-
-            <label for="message">How can I help you?</label>
-            <textarea
-                class="gh-textarea"
-                name="message"
-                id="message"
-            ></textarea>
-
-            <button
-                type="submit"
-                class="contact-form__submit gh-button"
-            >Send</button>
-        </form>
-        <span class="contact__alt-message">Or email me at:
-            <a
-                href="mailto:workwithmickpilgrim@gmail.com"
-            >workwithmickpilgrim@gmail.com</a></span>
-    </div>
-</section>
-<div class="gh-page">
-    <div class="gh-container">
-    </div>
-</div>
+{{> "contact"}}

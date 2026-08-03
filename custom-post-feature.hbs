@@ -4,19 +4,20 @@
 
 <main class="post post-feature">
 
-    <header class="post-header">
-        {{#if feature_image}}
+    <section class="post-feature-hero">
+        <div class="gh-container post-feature-hero__inner">
             <img
+                class="post-feature-hero__image"
                 src="{{img_url feature_image size="xl"}}"
                 alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
             >
-        {{/if}}
+            {{#if feature_image}}
+            {{/if}}
 
-        <p class="post-type">Feature</p>
+            <h1 class="post-feature-hero__title">{{title}}</h1>
+        </div>
 
-        <h1>{{title}}</h1>
-
-        {{#if custom_excerpt}}
+        {{!-- {{#if custom_excerpt}}
             <p class="post-excerpt">{{custom_excerpt}}</p>
         {{/if}}
 
@@ -25,12 +26,58 @@
             <time datetime="{{date format="YYYY-MM-DD"}}">
                 {{date format="MMMM D, YYYY"}}
             </time>
-        </div>
-    </header>
+        </div> --}}
+    </section>
 
     <section class="post-content">
-        {{content}}
+        <div class="gh-container post-content__inner">
+            <div class="post-meta">
+                <time datetime="{{date format="YYYY-MM-DD"}}">
+                    {{date format="MMMM D, YYYY"}}
+                </time>
+            </div>
+            
+            {{content}}
+        </div>
     </section>
+
+    <section class="share-youtube">
+        <div class="gh-container share-youtube__inner">
+            <div class="share-youtube__wrapper">
+                <h4 class="share-youtube__title">Watch the full video</h4>
+                <iframe 
+                    class="share-youtube__embed"
+                    src="https://www.youtube.com/embed/wqk6Bsmmqks" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                >
+                </iframe>
+                <div class="share-youtube__footer">
+                    <div class="share-youtube-socials">
+                        <span>SHARE THIS ARTICLE:</span>
+                        <div class="share-youtube-socials__links">
+                            <div class="share-youtube-social-link">
+
+                            </div>
+                            <div class="share-youtube-social-link">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <p class="share-youtube-message">Follow <a>@mick.pilgrim</a>for more film reviews and recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> "post-grid"
+        title="You might like"
+        filter="tag:hash-type-review"
+        ctaLabel="View all"
+        ctaLink="/reviews/"
+    }}
+
+    {{> "contact"}}
 
 </main>
 

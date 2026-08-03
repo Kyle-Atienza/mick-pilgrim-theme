@@ -1,0 +1,80 @@
+.post-feature-hero {
+    min-height: 724px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(190, 190, 190);
+
+    position: relative;
+}
+
+.post-feature-hero__image {
+    border: 1px solid red;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.post-feature-hero__title {
+    text-align: center;
+}
+
+.post-feature .post-content {
+    padding: 32px 0;
+}
+
+.post-feature .post-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Share YouTube
+/* ---------------------------------------------------------- */
+
+.share-youtube__wrapper {
+    padding: 74px;
+    border: 1px solid orange;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.share-youtube__title {
+    font-size: 52px;
+}
+
+.share-youtube__embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.share-youtube__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.share-youtube-socials {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.share-youtube-socials__links {
+    display: flex;
+    gap: 16px;
+}
+
+.share-youtube-social-link {
+    width: 48px;
+    aspect-ratio: 1/1;
+    border: 1px solid crimson;
+    border-radius: 100%;
+}

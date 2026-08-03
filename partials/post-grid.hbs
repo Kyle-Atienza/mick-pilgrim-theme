@@ -1,0 +1,37 @@
+<section class="post-grid">
+    <div class="post-grid__inner gh-container">
+        <h2>{{title}}</h2>
+        <div class="post-grid-items">
+            {{#get
+                "posts"
+                filter="{{filter}}"
+                limit="3"
+                include="tags,authors"
+                order="published_at desc"
+            }}
+                {{#foreach posts}}
+                    <article class="post-grid-item">
+                        {{#if feature_image}}
+                            <img
+                                class="post-grid-item__image"
+                                src="{{img_url feature_image size="m"}}"
+                                alt="{{title}}"
+                            />
+                        {{/if}}
+                        <div class="post-grid-item__title">
+                            <h3>
+                                <a href="{{url}}">
+                                    {{title}}
+                                </a>
+                            </h3>
+                        </div>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+        <div class="post-grid-cta">
+            <a class="gh-button" href="{{ctaLink}}">{{ctaLabel}}</a>
+        </div>
+    </div>
+</section>

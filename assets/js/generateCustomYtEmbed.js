@@ -1,7 +1,8 @@
-const form = document.querySelector("#youtube-generator");
-const linkInput = document.querySelector("#link");
-const generatedCode = document.querySelector("#generated-code");
-const copyButton = document.querySelector("#copy-code");
+const adminSection = document.querySelector(".custom-youtube-embed");
+const form = adminSection.querySelector("#youtube-generator");
+const linkInput = adminSection.querySelector("#link");
+const generatedCode = adminSection.querySelector("#generated-code");
+const copyButton = adminSection.querySelector("#copy-code");
 
 function getYouTubeVideoId(url) {
     try {

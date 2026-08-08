@@ -1,0 +1,14 @@
+.post-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-rating__star {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.post-rating__star--empty {
+    opacity: 0.25;
+}

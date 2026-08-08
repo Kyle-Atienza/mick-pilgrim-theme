@@ -1,0 +1,126 @@
+.post-review-hero {
+    min-height: 724px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(190, 190, 190);
+
+    position: relative;
+}
+
+.post-review-hero__image {
+    border: 1px solid red;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.post-review-hero__content {
+    margin: 0 auto;
+    max-width: 720px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post-review-hero__title {
+    position: relative;
+    font-size: 80px;
+}
+
+.post-review-rating {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: start;
+
+    height: 1em;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post-review-hero__title {
+    text-align: center;
+}
+
+.post-review .post-content {
+    padding: 32px 0;
+}
+
+.post-review .post-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Mick Pick
+/* ---------------------------------------------------------- */
+
+.mick-pick {
+    padding: 60px;
+    border: 1px solid orange;
+
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "image content";
+    grid-template-columns: 2fr 3fr;
+    gap: 32px;
+}
+
+.mick-pick__title {
+    grid-area: header;
+
+    font-size: 48px;
+}
+
+.mick-pick__image {
+    grid-area: image;
+}
+
+.mick-pick__content {
+    grid-area: content;
+}
+
+.mick-pick__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.mick-pick__body {
+    font-size: 36px;
+    line-height: 1em;
+}
+
+.mick-pick__body > * {
+    margin-bottom: 1em;
+}
+
+.mick-pick-share {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.mick-pick-share__links {
+    display: flex;
+    gap: 16px;
+}
+
+.mick-pick-share-link {
+    width: 48px;
+    aspect-ratio: 1/1;
+    border: 1px solid crimson;
+    border-radius: 100%;
+}

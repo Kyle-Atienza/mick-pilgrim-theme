@@ -1,15 +1,30 @@
+/* .admin {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+} */
+
 .admin-title {
     margin-bottom: 24px;
 }
 
-/* Custom YouTube embed
+/* Admin section
 /* ---------------------------------------------------------- */
 
-.custom-youtube-embed input {
+.admin-section {
+    margin-bottom: 60px;
+}
+
+.admin-section input,
+.admin-section textarea {
     margin-bottom: 24px;
 }
 
-.custom-youtube-embed .admin-section__inner {
+.admin-section textarea {
+    min-height: 200px;
+}
+
+.admin-section__inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;

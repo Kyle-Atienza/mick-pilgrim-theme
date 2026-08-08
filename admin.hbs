@@ -44,6 +44,71 @@
         </div>
     </section>
 
+    <section class="mick-pick-generator admin-section">
+        <div class="gh-container admin-section__inner">
+            <div class="admin-section-controls">
+                <h2 class="admin-title">Quick Mick picks</h2>
+
+                <form id="mick-pick-generator-form">
+                    <label for="image">Image</label>
+
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="image"
+                        id="image"
+                        placeholder="Enter image URL"
+                        {{! required }}
+                    />
+
+                    <label for="image-alt-name">Image alt name (for
+                        accessibility)</label>
+
+                    <input
+                        class="gh-input"
+                        type="text"
+                        name="image-alt-name"
+                        id="image-alt-name"
+                        placeholder="Enter image alt name"
+                        {{! required }}
+                    />
+
+                    <label for="body">Body</label>
+
+                    <textarea
+                        class="gh-textarea"
+                        type="text"
+                        name="body"
+                        id="body"
+                        placeholder="Enter body content"
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="gh-button">
+                        Generate
+                    </button>
+                </form>
+            </div>
+
+            <div class="admin-section-code-wrapper">
+                <button
+                    type="button"
+                    class="admin-copy-button"
+                    id="copy-code"
+                    disabled
+                >
+                    Copy
+                </button>
+
+                <pre><code
+                        class="admin-section-code"
+                        id="generated-code"
+                    ></code></pre>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <script src="{{asset 'js/generateCustomYtEmbed.js'}}"></script>
+<script src="{{asset 'js/generateMickPick.js'}}"></script>

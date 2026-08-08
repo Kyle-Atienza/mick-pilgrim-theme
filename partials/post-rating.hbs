@@ -1,0 +1,13 @@
+<div
+    class="post-rating"
+    data-rating="
+        {{#foreach tags visibility="all"}}
+            {{#match slug "~^" "hash-rating-"}}
+                {{slug}}
+            {{/match}}
+        {{/foreach}}
+    "
+>
+</div>
+
+<script src="{{asset 'js/postRating.js'}}"></script>

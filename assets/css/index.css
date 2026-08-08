@@ -28,11 +28,13 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Pages */
 @import "page/home.css";
 @import "page/post-feature.css";
+@import "page/post-review.css";
 @import "page/admin.css";
 
 /* partials */
 @import "partials/contact.css";
 @import "partials/post-grid.css";
+@import "partials/post-rating.css";
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */

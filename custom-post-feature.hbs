@@ -38,6 +38,34 @@
             </div>
             
             {{content}}
+            {{!-- <div class="share-youtube">
+                <div class="share-youtube__inner">
+                    <div class="share-youtube__wrapper">
+                        <h4 class="share-youtube__title">Watch the full video</h4>
+                        <iframe 
+                            class="share-youtube__embed"
+                            src="https://www.youtube.com/embed/wqk6Bsmmqks" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                        >
+                        </iframe>
+                        <div class="share-youtube__footer">
+                            <div class="share-youtube-socials">
+                                <span>SHARE THIS ARTICLE:</span>
+                                <div class="share-youtube-socials__links">
+                                    <div class="share-youtube-social-link">
+
+                                    </div>
+                                    <div class="share-youtube-social-link">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="share-youtube-message">Follow <a>@mick.pilgrim</a>for more film reviews and recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>  --}}
         </div>
     </section>
 
@@ -72,7 +100,8 @@
 
     {{> "post-grid"
         title="You might like"
-        filter="tag:hash-type-review"
+        filter="tag:hash-type-feature"
+        excludeId=id
         ctaLabel="View all"
         ctaLink="/reviews/"
     }}

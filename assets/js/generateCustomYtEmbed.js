@@ -47,8 +47,8 @@ form?.addEventListener("submit", (event) => {
 
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
-    const html = `<section class="share-youtube">
-    <div class="gh-container share-youtube__inner">
+    const html = `<div class="share-youtube">
+    <div class="share-youtube__inner">
         <div class="share-youtube__wrapper">
             <h4 class="share-youtube__title">
                 Watch the full video
@@ -82,7 +82,7 @@ form?.addEventListener("submit", (event) => {
             </div>
         </div>
     </div>
-</section>`;
+</div>`;
 
     generatedCode.textContent = html;
 

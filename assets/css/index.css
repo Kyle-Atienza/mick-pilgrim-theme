@@ -9,6 +9,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
+@import "fonts.css";
 @import "vars.css";
 @import "components/global.css";
 @import "components/forms.css";
@@ -35,6 +36,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "partials/contact.css";
 @import "partials/post-grid.css";
 @import "partials/post-rating.css";
+
+.post-data {
+    display: none;
+}
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */

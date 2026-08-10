@@ -11,15 +11,15 @@
 {{> "post-grid"
     title="Latest Reviews"
     filter="tag:hash-type-review"
-    ctaLabel="View all reviews"
+    ctaLabel="View all"
     ctaLink="/reviews/"
 }}
 
 {{! Featured Features }}
-<section class="features">
-    <div class="features__inner gh-container">
-        <h2>Features</h2>
-        <div class="featured-features">
+<section class="featured-features">
+    <div class="featured-features__inner gh-container">
+        <h2 class="featured-features__title">Features</h2>
+        <div class="featured-features-grid">
             {{#get
                 "posts"
                 filter="tag:hash-type-feature"
@@ -29,27 +29,29 @@
             }}
                 {{#foreach posts}}
                     <article class="featured-feature">
-                        {{#if feature_image}}
-                            <img
-                                class="featured-feature__image"
-                                src="{{img_url feature_image size="m"}}"
-                                alt="{{title}}"
-                            />
-                        {{/if}}
-                        <div class="featured-feature__content">
-                            <h3>
-                                <a href="{{url}}">
+                        <a class="featured-feature__inner" href="{{url}}">
+                            {{#if feature_image}}
+                                <img
+                                    class="featured-feature__image"
+                                    src="{{img_url feature_image size="m"}}"
+                                    alt="{{title}}"
+                                />
+                                <div
+                                    class="featured-feature__image-overlay"
+                                ></div>
+                            {{/if}}
+                            <div class="featured-feature__content">
+                                <h3 class="featured-feature__title">
                                     {{title}}
-                                </a>
-                            </h3>
-                            <p>{{excerpt}}</p>
-                        </div>
-
+                                </h3>
+                                <p class="featured-feature__excerpt">{{excerpt}}</p>
+                            </div>
+                        </a>
                     </article>
                 {{/foreach}}
             {{/get}}
         </div>
-        <div class="features-cta">
+        <div class="featured-features-cta">
             <a class="gh-button" href="/features/">See more</a>
         </div>
     </div>
@@ -58,12 +60,12 @@
 
 <section class="about-me">
     <div class="about-me__inner gh-container">
-        <img src="" alt="" class="profile__image" />
+        <img src={{@custom.about_me_photo_URL}} alt="" class="profile__image" />
         <div class="profile__content">
             <span class="profile__subtitle">
                 About Mick Pilgrim
             </span>
-            <h3 class="profile__title">Lorem Ipsum Dolor Sit Amet</h3>
+            <h3 class="profile__title">Lorem Ipsum <br/> Dolor Sit Amet</h3>
             <div class="profile__description">
                 <p>Mick Pilgrim is the online persona of Mark Peregrino, who’s
                     best known for his film review videos that cover new

@@ -2,7 +2,7 @@
 /* ---------------------------------------------------------- */
 
 .contact {
-    padding: 96px 0;
+    padding: 96px 0 68px;
 }
 
 .contact__inner {
@@ -10,6 +10,12 @@
     flex-direction: column;
     align-items: center;
     gap: 48px;
+}
+
+.contact__title {
+    font-size: 48px;
+    line-height: 1em;
+    color: var(--color-dark);
 }
 
 .contact-form {
@@ -33,4 +39,14 @@
 .contact-form__submit {
     margin: 0 auto;
     margin-top: 48px;
+    color: #fc4534 !important;
+    box-shadow: inset 0 0 0 3px #fc4534 !important;
+}
+
+.contact__alt-message {
+    font-size: 18px;
+}
+
+.contact__alt-message a {
+    font-weight: 900;
 }

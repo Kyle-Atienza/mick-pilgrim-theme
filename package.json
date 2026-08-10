@@ -87,6 +87,13 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "about_me_photo_URL": {
+                "type": "text",
+                "description": "Displays about me photo on home page",
+                "group": "homepage"
+            }
         }
     }
 }

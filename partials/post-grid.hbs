@@ -1,6 +1,6 @@
 <section class="post-grid">
     <div class="post-grid__inner gh-container">
-        <h2>{{title}}</h2>
+        <h3 class="post-grid__title">{{title}}</h3>
         <div class="post-grid-items">
             {{#if excludeId}}
                 {{#get
@@ -11,22 +11,23 @@
                     order="published_at desc"
                 }}
                     {{#foreach posts}}
-                        <article class="post-grid-item">
-                            {{#if feature_image}}
-                                <img
-                                    class="post-grid-item__image"
-                                    src="{{img_url feature_image size="m"}}"
-                                    alt="{{title}}"
-                                />
-                            {{/if}}
-                            <div class="post-grid-item__title">
-                                <h3>
-                                    <a href="{{url}}">
-                                        {{title}}
-                                    </a>
-                                </h3>
-                            </div>
-                        </article>
+                        <a href="{{url}}">
+                            <article class="post-grid-item">
+                                {{#if feature_image}}
+                                    <img
+                                        class="post-grid-item__image"
+                                        src="{{img_url feature_image size="m"}}"
+                                        alt="{{title}}"
+                                    />
+                                    <div
+                                        class="post-grid-item__image-overlay"
+                                    ></div>
+                                {{/if}}
+                                <span class="post-grid-item__title">
+                                    {{title}}
+                                </span>
+                            </article>
+                        </a>
                     {{/foreach}}
                 {{/get}}
             {{else}}
@@ -39,21 +40,21 @@
                 }}
                     {{#foreach posts}}
                         <article class="post-grid-item">
-
-                            {{#if feature_image}}
-                                <img
-                                    class="post-grid-item__image"
-                                    src="{{img_url feature_image size="m"}}"
-                                    alt="{{title}}"
-                                />
-                            {{/if}}
-                            <div class="post-grid-item__title">
-                                <h3>
-                                    <a href="{{url}}">
-                                        {{title}}
-                                    </a>
-                                </h3>
-                            </div>
+                            <a class="post-grid-item__wrapper" href="{{url}}">
+                                {{#if feature_image}}
+                                    <img
+                                        class="post-grid-item__image"
+                                        src="{{img_url feature_image size="m"}}"
+                                        alt="{{title}}"
+                                    />
+                                    <div
+                                        class="post-grid-item__image-overlay"
+                                    ></div>
+                                {{/if}}
+                                <span class="post-grid-item__title">
+                                    {{title}}
+                                </span>
+                            </a>
                         </article>
                     {{/foreach}}
                 {{/get}}
@@ -61,7 +62,10 @@
         </div>
 
         <div class="post-grid-cta">
-            <a class="gh-button" href="{{ctaLink}}">{{ctaLabel}}</a>
+            <a
+                class="gh-button post-grid-cta__link"
+                href="{{ctaLink}}"
+            >{{ctaLabel}}</a>
         </div>
     </div>
 </section>

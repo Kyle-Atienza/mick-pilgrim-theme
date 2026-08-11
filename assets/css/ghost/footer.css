@@ -3,13 +3,15 @@
 
 .gh-foot {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4vmin 8vmin;
+    background-color: var(--color-dark);
 }
 
 .gh-foot .gh-container {
-    max-width: unset;
+    max-width: 1560px;
+    padding-block: 140px;
 }
 
 .gh-foot-inner {
@@ -20,9 +22,6 @@
 .gh-foot a {
     color: inherit;
 }
-
-/* .gh-foot-brand {
-} */
 
 .gh-foot-menu {
     display: flex;
@@ -36,26 +35,68 @@
     align-items: center;
     justify-content: center;
     list-style: none;
-    font-size: 1.8rem;
+    gap: 28px;
 }
 
 .gh-foot-menu .nav li {
-    margin: 0 1.5vmin;
-    padding: 0;
+    font-size: 0;
+    width: 48px;
+    height: 48px;
+
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.gh-foot-menu .nav li.nav-instagram {
+    background-image: url(/assets/instagram-icon.svg);
+}
+
+.gh-foot-menu .nav li.nav-tiktok {
+    background-image: url(/assets/tiktok-icon.svg);
+}
+
+.gh-foot-menu .nav li.nav-youtube {
+    background-image: url(/assets/youtube-icon.svg);
 }
 
 .gh-foot-menu .nav a {
-    display: inline-block;
-    padding: 3px 0;
-    text-decoration: none;
-    box-shadow: 0 -1px 0 0 currentcolor inset;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .gh-foot-meta {
-    margin: 2rem 0;
-    font-size: 1.5rem;
+    font-size: 28px;
+    font-weight: 300;
     text-align: center;
-    opacity: 0.75;
+}
+
+.gh-foot-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: var(--color-light);
+}
+
+.gh-foot-banner {
+    padding: 20px 0;
+    background-color: #8c0406;
+    width: 100%;
+}
+
+.gh-foot-banner .gh-container {
+    padding: 0;
+    color: var(--color-light);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center;
 }
 
 @media (max-width: 700px) {

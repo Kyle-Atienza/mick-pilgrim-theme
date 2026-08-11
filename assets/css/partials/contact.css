@@ -28,7 +28,7 @@
 }
 
 .contact-form label {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     width: 100%;
 }
 
@@ -49,4 +49,8 @@
 
 .contact__alt-message a {
     font-weight: 900;
+}
+
+.contact-form label[for="message"] {
+    font-size: 26px;
 }

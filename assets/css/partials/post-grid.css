@@ -1,22 +1,22 @@
-.post-grid {
+.review-posts {
     padding-block: 72px;
 
     background-color: var(--color-dark);
 }
 
-.post-grid__inner {
+.review-posts__inner {
     display: flex;
     flex-direction: column;
     gap: 72px;
 }
 
-.post-grid__title {
+.review-posts__title {
     color: var(--color-light);
     font-size: 48px;
     font-weight: 600;
 }
 
-.post-grid-items {
+.review-posts-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -25,26 +25,26 @@
 /* Sort
 /* ---------------------------------------------------------- */
 
-.post-grid__sort {
+.review-posts__sort {
     font-size: 18px;
     color: var(--color-light);
     letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
-.post-grid__sort select,
-.post-grid__sort ::picker(select) {
+.review-posts__sort select,
+.review-posts__sort ::picker(select) {
     appearance: base-select;
 
     text-transform: uppercase;
 }
 
-.post-grid__sort select {
+.review-posts__sort select {
     border: none;
     color: #fbd246;
 }
 
-.post-grid__sort ::picker(select) {
+.review-posts__sort ::picker(select) {
     border: none;
     background-color: #111111;
     color: var(--color-light);
@@ -54,26 +54,26 @@
     top: 8px;
 }
 
-.post-grid__sort select::picker-icon {
+.review-posts__sort select::picker-icon {
     margin-left: 8px;
 }
 
-.post-grid__sort option::checkmark {
+.review-posts__sort option::checkmark {
     display: none;
 }
 
-.post-grid__sort option {
+.review-posts__sort option {
     padding: 16px;
 }
 
 /* Post grid item
 /* ---------------------------------------------------------- */
 
-.post-grid-item {
+.review-post {
     aspect-ratio: 4/5;
 }
 
-.post-grid-item__wrapper {
+.review-post__wrapper {
     position: relative;
     height: 100%;
 
@@ -81,12 +81,12 @@
     align-items: end;
 }
 
-.post-grid-item__wrapper > * {
+.review-post__wrapper > * {
     grid-row: 1/2;
     grid-column: 1/2;
 }
 
-.post-grid-item__image {
+.review-post__image {
     width: 100%;
     height: 100%;
 
@@ -94,7 +94,7 @@
     object-position: center;
 }
 
-.post-grid-item__image-overlay {
+.review-post__image-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -108,13 +108,13 @@
     );
 }
 
-.post-grid-item__title {
+.review-post__title {
     padding: 32px;
     text-transform: uppercase;
     z-index: 1;
 }
 
-.post-grid-item__title {
+.review-post__title {
     font-size: 52px;
     font-weight: 600;
     color: var(--color-light);
@@ -122,11 +122,11 @@
     text-decoration: none;
 }
 
-.post-grid-cta {
+.review-posts-cta {
     text-align: center;
 }
 
-.post-grid-cta__link {
+.review-posts-cta__link {
     color: #fc4534 !important;
     box-shadow: inset 0 0 0 3px #8c0406 !important;
 }
@@ -134,24 +134,24 @@
 /* Pagination
 /* ---------------------------------------------------------- */
 
-.post-grid-pagination {
+.review-posts-pagination {
     color: #fbd246;
     font-size: 20px;
 }
 
-.post-grid-pagination ul {
+.review-posts-pagination ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-.post-grid-pagination li {
+.review-posts-pagination li {
     list-style-type: none;
     margin: 0 !important;
 }
 
-.post-grid-pagination button {
+.review-posts-pagination button {
     background: none;
     padding: 0;
     margin: 0;
@@ -162,6 +162,6 @@
     display: flex;
 }
 
-.post-grid-pagination svg {
+.review-posts-pagination svg {
     fill: #fbd246;
 }

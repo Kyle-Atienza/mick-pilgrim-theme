@@ -1,5 +1,5 @@
 <article
-    class="post-grid-item"
+    class="review-post"
     data-title="{{title}}"
     data-published-at="{{published_at}}"
     {{#foreach tags}}
@@ -10,16 +10,16 @@
         {{#match name "rating-5"}}data-rating-at="5"{{/match}}
     {{/foreach}}
 >
-    <a class="post-grid-item__wrapper" href="{{url}}">
+    <a class="review-post__wrapper" href="{{url}}">
         {{#if feature_image}}
             <img
-                class="post-grid-item__image"
+                class="review-post__image"
                 src="{{img_url feature_image size="m"}}"
                 alt="{{title}}"
             />
-            <div class="post-grid-item__image-overlay"></div>
+            <div class="review-post__image-overlay"></div>
         {{/if}}
-        <span class="post-grid-item__title">
+        <span class="review-post__title">
             {{title}}
         </span>
     </a>

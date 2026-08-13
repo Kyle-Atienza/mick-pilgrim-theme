@@ -1,0 +1,46 @@
+<section class="feature-posts">
+    <div class="feature-posts__inner gh-container">
+        {{#if title}}
+            <h2 class="feature-posts__title">{{title}}</h2>
+        {{/if}}
+        <div class="feature-posts-items">
+            {{#get
+                "posts"
+                filter="tag:hash-type-feature"
+                limit="{{limit}}"
+                include="tags,authors"
+                order="published_at desc"
+            }}
+                {{#foreach posts}}
+                    <article class="feature-posts-item">
+                        <a class="feature-posts-item__inner" href="{{url}}">
+                            {{#if feature_image}}
+                                <img
+                                    class="feature-posts-item__image"
+                                    src="{{img_url feature_image size="m"}}"
+                                    alt="{{title}}"
+                                />
+                                <div
+                                    class="feature-posts-item__image-overlay"
+                                ></div>
+                            {{/if}}
+                            <div class="feature-posts-item__content">
+                                <h3 class="feature-posts-item__title">
+                                    {{title}}
+                                </h3>
+                                <p
+                                    class="feature-posts-item__excerpt"
+                                >{{excerpt}}</p>
+                            </div>
+                        </a>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+        {{#if ctaLink}}
+            <div class="feature-posts-cta">
+                <a class="gh-button" href="{{ctaLink}}">{{ctaLabel}}</a>
+            </div>
+        {{/if}}
+    </div>
+</section>

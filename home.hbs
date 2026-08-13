@@ -8,7 +8,7 @@
 </section>
 
 {{! Featured Reviews }}
-{{> "post-grid"
+{{> "review-posts"
     title="Latest Reviews"
     filter="tag:hash-type-review"
     ctaLabel="View all"
@@ -16,47 +16,11 @@
 }}
 
 {{! Featured Features }}
-<section class="featured-features">
-    <div class="featured-features__inner gh-container">
-        <h2 class="featured-features__title">Features</h2>
-        <div class="featured-features-grid">
-            {{#get
-                "posts"
-                filter="tag:hash-type-feature"
-                limit="3"
-                include="tags,authors"
-                order="published_at desc"
-            }}
-                {{#foreach posts}}
-                    <article class="featured-feature">
-                        <a class="featured-feature__inner" href="{{url}}">
-                            {{#if feature_image}}
-                                <img
-                                    class="featured-feature__image"
-                                    src="{{img_url feature_image size="m"}}"
-                                    alt="{{title}}"
-                                />
-                                <div
-                                    class="featured-feature__image-overlay"
-                                ></div>
-                            {{/if}}
-                            <div class="featured-feature__content">
-                                <h3 class="featured-feature__title">
-                                    {{title}}
-                                </h3>
-                                <p class="featured-feature__excerpt">{{excerpt}}</p>
-                            </div>
-                        </a>
-                    </article>
-                {{/foreach}}
-            {{/get}}
-        </div>
-        <div class="featured-features-cta">
-            <a class="gh-button" href="/feature/">See more</a>
-        </div>
-    </div>
-
-</section>
+{{> "feature-posts"
+    title="Features"
+    ctaLabel="See more"
+    ctaLink="/feature/"
+}}
 
 <section class="about-me">
     <div class="about-me__inner gh-container">

@@ -1,9 +1,9 @@
-const sortSelect = document.querySelector(".post-grid__sort");
-const postGrid = document.querySelector(".post-grid-items");
+const sortSelect = document.querySelector(".review-posts__sort");
+const postGrid = document.querySelector(".review-posts-items");
 
 if (sortSelect && postGrid) {
     const sortPosts = (sort) => {
-        const posts = Array.from(postGrid.querySelectorAll(".post-grid-item"));
+        const posts = Array.from(postGrid.querySelectorAll(".review-post"));
 
         posts.sort((a, b) => {
             switch (sort) {

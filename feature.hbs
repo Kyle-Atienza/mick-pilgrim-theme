@@ -1,21 +1,12 @@
 {{!< default}}
 
-<h1>Features</h1>
+<section class="feature-hero">
+    <div class="gh-container feature-hero__inner">
+        <h1>Features</h1>
+    </div>
+</section>
 
-<div class="features-grid">
-    {{#foreach posts}}
-        <article class="feature-card">
-            {{#if feature_image}}
-                <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-            {{/if}}
+{{> "feature-posts"
+}}
 
-            <h2>
-                <a href="{{url}}">
-                    {{title}}
-                </a>
-            </h2>
-
-            <p>{{excerpt}}</p>
-        </article>
-    {{/foreach}}
-</div>
+{{> "contact"}}

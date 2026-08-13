@@ -1,21 +1,16 @@
 {{!< default}}
 
-<h1>Reviews</h1>
+<section class="review-hero">
+    <div class="gh-container review-hero__inner">
+        <h1>Reviews</h1>
+    </div>
+</section>
 
-<div class="reviews-grid">
-    {{#foreach posts}}
-        <article class="review-card">
-            {{#if feature_image}}
-                <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-            {{/if}}
+{{> "post-grid"
+    class="review-post-grid"
+    filter="tag:hash-type-review"
+    sort="true"
+    pagination="true"
+}}
 
-            <h2>
-                <a href="{{url}}">
-                    {{title}}
-                </a>
-            </h2>
-
-            <p>{{excerpt}}</p>
-        </article>
-    {{/foreach}}
-</div>
+{{> "contact"}}

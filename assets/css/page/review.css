@@ -1,0 +1,25 @@
+.review-hero {
+    margin-top: calc(-1 * var(--header-height));
+    height: 300px;
+
+    background-image: url("/assets/home-hero-bg.png");
+}
+
+.review-hero__inner {
+    height: 100%;
+    padding-top: calc(var(--header-height) / 2) !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-hero h1 {
+    font-size: 80px;
+    line-height: 1em;
+    color: #ffffff;
+}
+
+.review-post-grid {
+    padding-block: 112px 200px !important;
+}

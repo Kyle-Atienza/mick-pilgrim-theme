@@ -28,6 +28,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Pages */
 @import "page/home.css";
+@import "page/review.css";
 @import "page/post-feature.css";
 @import "page/post-review.css";
 @import "page/admin.css";

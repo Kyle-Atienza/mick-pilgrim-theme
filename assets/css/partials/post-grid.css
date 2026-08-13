@@ -22,6 +22,50 @@
     gap: 16px;
 }
 
+/* Sort
+/* ---------------------------------------------------------- */
+
+.post-grid__sort {
+    font-size: 18px;
+    color: var(--color-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.post-grid__sort select,
+.post-grid__sort ::picker(select) {
+    appearance: base-select;
+
+    text-transform: uppercase;
+}
+
+.post-grid__sort select {
+    border: none;
+    color: #fbd246;
+}
+
+.post-grid__sort ::picker(select) {
+    border: none;
+    background-color: #111111;
+    color: var(--color-light);
+    min-width: 240px;
+
+    right: anchor(right);
+    top: 8px;
+}
+
+.post-grid__sort select::picker-icon {
+    margin-left: 8px;
+}
+
+.post-grid__sort option::checkmark {
+    display: none;
+}
+
+.post-grid__sort option {
+    padding: 16px;
+}
+
 /* Post grid item
 /* ---------------------------------------------------------- */
 
@@ -85,4 +129,39 @@
 .post-grid-cta__link {
     color: #fc4534 !important;
     box-shadow: inset 0 0 0 3px #8c0406 !important;
+}
+
+/* Pagination
+/* ---------------------------------------------------------- */
+
+.post-grid-pagination {
+    color: #fbd246;
+    font-size: 20px;
+}
+
+.post-grid-pagination ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.post-grid-pagination li {
+    list-style-type: none;
+    margin: 0 !important;
+}
+
+.post-grid-pagination button {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: inherit;
+    height: unset;
+    min-height: unset;
+    display: flex;
+}
+
+.post-grid-pagination svg {
+    fill: #fbd246;
 }

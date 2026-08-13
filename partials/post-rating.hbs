@@ -2,7 +2,7 @@
     class="post-rating"
     data-rating="
         {{#foreach tags visibility="all"}}
-            {{#match slug "~^" "hash-rating-"}}
+            {{#match slug "~^" "rating-"}}
                 {{slug}}
             {{/match}}
         {{/foreach}}

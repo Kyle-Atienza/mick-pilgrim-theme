@@ -1,0 +1,26 @@
+<article
+    class="post-grid-item"
+    data-title="{{title}}"
+    data-published-at="{{published_at}}"
+    {{#foreach tags}}
+        {{#match name "rating-1"}}data-rating-at="1"{{/match}}
+        {{#match name "rating-2"}}data-rating-at="2"{{/match}}
+        {{#match name "rating-3"}}data-rating-at="3"{{/match}}
+        {{#match name "rating-4"}}data-rating-at="4"{{/match}}
+        {{#match name "rating-5"}}data-rating-at="5"{{/match}}
+    {{/foreach}}
+>
+    <a class="post-grid-item__wrapper" href="{{url}}">
+        {{#if feature_image}}
+            <img
+                class="post-grid-item__image"
+                src="{{img_url feature_image size="m"}}"
+                alt="{{title}}"
+            />
+            <div class="post-grid-item__image-overlay"></div>
+        {{/if}}
+        <span class="post-grid-item__title">
+            {{title}}
+        </span>
+    </a>
+</article>

@@ -1,71 +1,105 @@
-<section class="post-grid">
+<section class="post-grid {{class}}">
     <div class="post-grid__inner gh-container">
-        <h3 class="post-grid__title">{{title}}</h3>
+        {{#if title}}
+            <h3 class="post-grid__title">{{title}}</h3>
+        {{/if}}
+        {{#match sort "==" "true"}}
+            <div class="post-grid__sort">
+                Sort by 
+                <select>
+                    <option value="latest">Latest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="title-asc">Films A-Z</option>
+                    <option value="title-desc">Films Z-A</option>
+                </select>
+            </div>
+        {{/match}}
         <div class="post-grid-items">
             {{#if excludeId}}
                 {{#get
                     "posts"
                     filter="{{filter}}+id:-{{excludeId}}"
+                    sort="{{sort}}"
                     limit="3"
-                    include="tags,authors"
-                    order="published_at desc"
+                    include="tags"
                 }}
                     {{#foreach posts}}
-                        <a href="{{url}}">
-                            <article class="post-grid-item">
-                                {{#if feature_image}}
-                                    <img
-                                        class="post-grid-item__image"
-                                        src="{{img_url feature_image size="m"}}"
-                                        alt="{{title}}"
-                                    />
-                                    <div
-                                        class="post-grid-item__image-overlay"
-                                    ></div>
-                                {{/if}}
-                                <span class="post-grid-item__title">
-                                    {{title}}
-                                </span>
-                            </article>
-                        </a>
+                        {{> "post-grid-item"}}
                     {{/foreach}}
                 {{/get}}
             {{else}}
                 {{#get
                     "posts"
                     filter="{{filter}}"
+                    sort="{{sort}}"
                     limit="3"
-                    include="tags,authors"
-                    order="published_at desc"
+                    include="tags"
                 }}
                     {{#foreach posts}}
-                        <article class="post-grid-item">
-                            <a class="post-grid-item__wrapper" href="{{url}}">
-                                {{#if feature_image}}
-                                    <img
-                                        class="post-grid-item__image"
-                                        src="{{img_url feature_image size="m"}}"
-                                        alt="{{title}}"
-                                    />
-                                    <div
-                                        class="post-grid-item__image-overlay"
-                                    ></div>
-                                {{/if}}
-                                <span class="post-grid-item__title">
-                                    {{title}}
-                                </span>
-                            </a>
-                        </article>
+                        {{> "post-grid-item"}}
                     {{/foreach}}
                 {{/get}}
             {{/if}}
         </div>
 
-        <div class="post-grid-cta">
-            <a
-                class="gh-button post-grid-cta__link"
-                href="{{ctaLink}}"
-            >{{ctaLabel}}</a>
-        </div>
+        {{!-- TODO pagination --}}
+        {{#match pagination "==" "true"}}
+            <nav class="post-grid-pagination"> 
+                <ul>
+                    <li>
+                        <button>
+                            {{> "icons/double-chevron-left"}}
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            {{> "icons/arrow-left"}}
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                        1
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                        2
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                        3
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                        4
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            {{> "icons/arrow-right"}}
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            {{> "icons/double-chevron-right"}}
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        {{/match}}
+
+        {{#if ctaLink}}
+            <div class="post-grid-cta">
+                <a
+                    class="gh-button post-grid-cta__link"
+                    href="{{ctaLink}}"
+                >{{ctaLabel}}</a>
+            </div>
+        {{/if}}
     </div>
 </section>
+
+<script src="{{asset 'js/postGrid.js'}}"></script>

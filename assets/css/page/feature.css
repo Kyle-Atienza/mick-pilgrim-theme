@@ -2,7 +2,7 @@
     margin-top: calc(-1 * var(--header-height));
     height: 300px;
 
-    background-image: url("/assets/home-hero-bg.png");
+    background-image: url("/assets/textured-bg.png");
 }
 
 .feature-hero__inner {
@@ -20,6 +20,16 @@
     color: #ffffff;
 }
 
-.feature-post-grid {
-    padding-block: 112px 200px !important;
+/* Feature posts
+/* ---------------------------------------------------------- */
+
+.feature-page-posts {
+    background-color: var(--color-dark);
+    background-image: none !important;
+
+    padding-block: 232px 172px !important;
+}
+
+.feature-page-posts .feature-posts__inner {
+    gap: 136px;
 }

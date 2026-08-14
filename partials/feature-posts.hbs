@@ -1,4 +1,4 @@
-<section class="feature-posts">
+<section class="feature-posts {{class}}">
     <div class="feature-posts__inner gh-container">
         {{#if title}}
             <h2 class="feature-posts__title">{{title}}</h2>
@@ -37,6 +37,11 @@
                 {{/foreach}}
             {{/get}}
         </div>
+
+        {{#match pagination "==" "true"}}
+            {{> "posts-pagination"}}
+        {{/match}}
+
         {{#if ctaLink}}
             <div class="feature-posts-cta">
                 <a class="gh-button" href="{{ctaLink}}">{{ctaLabel}}</a>

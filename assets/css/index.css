@@ -36,9 +36,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* partials */
 @import "partials/contact.css";
-@import "partials/post-grid.css";
+@import "partials/review-posts.css";
 @import "partials/feature-posts.css";
 @import "partials/post-rating.css";
+@import "partials/post-pagination.css";
 
 .post-data {
     display: none;

@@ -45,50 +45,7 @@
 
         {{!-- TODO pagination --}}
         {{#match pagination "==" "true"}}
-            <nav class="review-posts-pagination"> 
-                <ul>
-                    <li>
-                        <button>
-                            {{> "icons/double-chevron-left"}}
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            {{> "icons/arrow-left"}}
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                        1
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                        2
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                        3
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                        4
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            {{> "icons/arrow-right"}}
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            {{> "icons/double-chevron-right"}}
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+            {{> "posts-pagination"}}
         {{/match}}
 
         {{#if ctaLink}}

@@ -130,38 +130,3 @@
     color: #fc4534 !important;
     box-shadow: inset 0 0 0 3px #8c0406 !important;
 }
-
-/* Pagination
-/* ---------------------------------------------------------- */
-
-.review-posts-pagination {
-    color: #fbd246;
-    font-size: 20px;
-}
-
-.review-posts-pagination ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.review-posts-pagination li {
-    list-style-type: none;
-    margin: 0 !important;
-}
-
-.review-posts-pagination button {
-    background: none;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    color: inherit;
-    height: unset;
-    min-height: unset;
-    display: flex;
-}
-
-.review-posts-pagination svg {
-    fill: #fbd246;
-}

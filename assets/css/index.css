@@ -30,8 +30,9 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "page/home.css";
 @import "page/review.css";
 @import "page/feature.css";
-@import "page/post-feature.css";
+/* @import "page/post-feature.css"; */
 @import "page/post-review.css";
+@import "page/custom-post-feature.css";
 @import "page/admin.css";
 
 /* partials */

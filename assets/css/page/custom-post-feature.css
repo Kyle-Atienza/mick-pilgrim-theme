@@ -1,0 +1,146 @@
+/* Hero
+/* ---------------------------------------------------------- */
+
+.custom-post-feature-hero {
+    margin-top: calc(-1 * var(--header-height));
+    height: 724px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-post-feature-hero .gh-container {
+    max-width: 900px !important;
+}
+
+.custom-post-feature-hero .post-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-post-feature-hero__image,
+.custom-post-feature-hero__image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.custom-post-feature-hero__image-overlay {
+    background-color: var(--color-dark);
+    opacity: 0.39;
+}
+
+.custom-post-feature-hero__title {
+    position: relative;
+
+    font-size: 80px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: var(--color-light);
+    text-align: center;
+}
+
+/* Content 
+/* ---------------------------------------------------------- */
+
+.custom-post-feature-content {
+    padding-block: 20px 100px;
+}
+
+/* .custom-post-feature-content .gh-container {
+    max-width: 1248px !important;
+} */
+
+.custom-post-feature-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* YouTube embed 
+/* ---------------------------------------------------------- */
+
+.post-youtube-embed {
+    margin-top: 108px;
+}
+
+.post-youtube-embed__inner {
+    padding: 0 !important;
+}
+
+.post-youtube-embed__wrapper {
+    padding: 56px 74px;
+    border: 4px solid #fbd246;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.post-youtube-embed__title {
+    font-size: 52px;
+    line-height: 1em;
+}
+
+.post-youtube-embed__embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.post-youtube-embed__embed iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.post-youtube-embed__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-youtube-embed-socials {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.post-youtube-embed-socials span {
+    font-size: 12px;
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fc4534;
+}
+
+.post-youtube-embed-socials__links {
+    display: flex;
+    gap: 10px;
+}
+
+.post-youtube-embed-social-link {
+    width: 48px;
+    aspect-ratio: 1/1;
+}
+
+.post-youtube-embed-social-link svg {
+    color: #fc4534;
+}
+
+.post-youtube-embed__message {
+    font-size: 16px;
+}
+
+/* You might like
+/* ---------------------------------------------------------- */
+
+.custom-post-feature-content-related {
+    padding-block: 104px 120px !important;
+}

@@ -1,8 +1,6 @@
 {{!< default}}
-{{!< default}}
 
-<main class="admin">
-
+{{! <main class="admin">
     <section class="custom-youtube-embed admin-section">
         <div class="gh-container admin-section__inner">
             <div class="admin-section-controls">
@@ -108,7 +106,113 @@
         </div>
     </section>
 
-</main>
+</main> }}
 
-<script src="{{asset 'js/generateCustomYtEmbed.js'}}"></script>
+<section class="admin-hero">
+    <div class="gh-container admin-hero__inner">
+        <h1>Admin</h1>
+    </div>
+</section>
+
+<section class="mick-pick-generator admin-section">
+    <div class="gh-container">
+        <h2 class="admin-section__title">Quick Mick picks</h2>
+        <div class="admin-section__inner">
+            <div class="admin-section-controls">
+
+                <form id="mick-pick-generator-form">
+
+                    <input
+                        class="gh-check"
+                        type="checkbox"
+                        name="has-video"
+                        id="has-video"
+                    />
+
+                    <label for="has-video">Has Video</label>
+
+                    <label for="image">Image</label>
+
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="image"
+                        id="image"
+                        placeholder="Enter image URL"
+                        required
+                    />
+
+                    <label for="video">Video</label>
+
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="video"
+                        id="video"
+                        placeholder="Enter video URL"
+                    />
+
+                    <label for="body">Body</label>
+
+                    <textarea
+                        class="gh-textarea"
+                        type="text"
+                        name="body"
+                        id="body"
+                        placeholder="Enter body content"
+                        required
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="gh-button admin-generate-button"
+                    >
+                        Generate
+                    </button>
+                </form>
+            </div>
+
+            <div class="admin-section-code-preview">
+            </div>
+            <button type="submit" class="gh-button" id="copy-code">
+                Copy Code
+            </button>
+
+            {{! <div class="admin-section-code-wrapper">
+                <button
+                    type="button"
+                    class="admin-copy-button"
+                    id="copy-code"
+                    disabled
+                >
+                    Copy
+                </button>
+
+                <pre><code
+                        class="admin-section-code"
+                        id="generated-code"
+                    ></code></pre>
+            </div> }}
+        </div>
+    </div>
+</section>
+
+{{! <section class="instagram-embed">
+    <div class="gh-container">
+        <input
+            class="gh-input"
+            type="text"
+            name="instgram-embed-url"
+            id="instgram-embed-url"
+            placeholder="Enter instagram URL"
+            required
+        />
+
+        <div class="instagram-embed-display">
+        </div>
+    </div>
+</section> }}
+
+{{!-- <script src="{{asset 'js/generateCustomInstagramEmbed.js'}}"></script> --}}
+{{!-- <script src="{{asset 'js/generateCustomYtEmbed.js'}}"></script> --}}
 <script src="{{asset 'js/generateMickPick.js'}}"></script>

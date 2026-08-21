@@ -2,83 +2,87 @@
 
 {{#post}}
 
-<main class="post post-review">
+<section class="custom-post-review-hero">
+    <div class="gh-container custom-post-review-hero__inner">
+        {{#if feature_image}}
+            <img
+                class="custom-post-review-hero__image"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            >
+            <div class="custom-post-review-hero__image-overlay"></div>
+        {{/if}}
 
-    <section class="post-review-hero">
-        <div class="gh-container post-review-hero__inner">
-            {{#if feature_image}}
-                <img
-                    class="post-review-hero__image"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                >
-            {{/if}}
-
-            <div class="post-review-hero__content">
-                <h1 class="post-review-hero__title">
-                    {{title}}
-                    <span class="post-review-rating">
-                        <span class="post-review-rating__label">MICK PICKS</span>
-                        {{> "post-rating"}}
-                    </span>
-                </h1>
+        <div class="custom-post-review-hero__content">
+            <h1 class="custom-post-review-hero__title">
+                {{title}}
+                {{!-- <span class="custom-post-review-rating">
+                    <span class="custom-post-review-rating__label">MICK PICKS</span>
+                    {{> "post-rating"}}
+                </span> --}}
+            </h1>
+            <div class="custom-post-review-rating">
+                <span class="custom-post-review-rating__label">MICK PICKS</span>
+                    {{> "post-rating"}}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="post-content">
-        <div class="gh-container post-content__inner">
-            <div class="post-meta">
-                <time datetime="{{date format="YYYY-MM-DD"}}">
-                    {{date format="MMMM D, YYYY"}}
-                </time>
-            </div>
+<section class="custom-post-review-content">
+    <div class="gh-container custom-post-review-content__inner">
+        <div class="post-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">
+                {{date format="MMMM D, YYYY"}}
+            </time>
+        </div>
+        <div class="gh-content post-body">
             {{content}}
-            
-            {{!-- <div class="mick-pick">
-                <h3 class="mick-pick__title">
-                    Quick Mick Pick
-                </h3>
-                <div class="mick-pick__image">
-                    <img src="http://localhost:2368/content/images/2026/08/Image-13.png" class="kg-image" alt="" loading="lazy" width="380" height="536">
-                </div>
-                <div class="mick-pick__content">
-                    <div class="mick-pick__body">
-                        <p>
-                            In an interview with British Vogue, Margot Robbie said Emerald Fennell hopes her version of ‘Wuthering Heights’ will be this generation’s ‘Titanic’. 
-                        </p>
-                        <p>
-                            I actually think it has more in common with Baz Luhrmann’s ‘Romeo + Juliet’.
-                        </p>
-                    </div>
-
-                    <div class="mick-pick__share">
-                        <span>SHARE THIS REVIEW:</span>
-                        <div class="mick-pick-share__links">
-                            <div class="mick-pick-share-link">
-
-                            </div>
-                            <div class="mick-pick-share-link">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mick-pick__message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
-                </div>
-            </div> --}}
         </div>
-    </section>
+        
+        {{!-- <div class="mick-pick">
+            <h3 class="mick-pick__title">
+                Quick Mick Pick
+            </h3>
+            <div class="mick-pick__media">
+                <img src="http://localhost:2368/content/images/2026/08/630206240_18413006092123739_1715128332285997336_n.jpg" class="kg-image" alt="">
+                <video 
+                    src="http://localhost:2368/content/media/2026/08/mick.pilgrim_1771081548_3832431131564960773_3824403738.mp4" 
+                    poster="http://localhost:2368/content/images/2026/08/630206240_18413006092123739_1715128332285997336_n.jpg" 
+                    preload="metadata" 
+                    controls
+                ></video>
+            </div>
+            <div class="mick-pick__content">
+                <div class="mick-pick__body">
+                    <p>In an interview with British Vogue, Margot Robbie said Emerald Fennell hopes her version of ‘Wuthering Heights’ will be this generation’s ‘Titanic’. </p><p>I actually think it has more in common with Baz Luhrmann’s ‘Romeo + Juliet’.</p>
+                </div>
+
+                <div class="mick-pick-socials">
+                    <span>SHARE THIS ARTICLE:</span>
+                    <div class="mick-pick-socials__links">
+                        <a class="mick-pick-social-link" href="#">
+                            {{> "icons/circle-instagram"}}
+                        </a>
+                        <a class="mick-pick-social-link" href="#">
+                            {{> "icons/circle-tiktok"}}
+                        </a>
+                    </div>
+                </div>
+                <p class="mick-pick-message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
+            </div>
+        </div> --}}
+    </div>
+</section>
 
 
-    {{> "review-posts"
-        title="You might like"
-        filter="tag:hash-type-review"
-        ctaLabel="View all"
-        ctaLink="/reviews/"
-    }}
+{{> "review-posts"
+    title="You might like"
+    filter="tag:hash-type-review"
+    ctaLabel="View all"
+    ctaLink="/reviews/"
+}}
 
-    {{> "contact"}}
-
-</main>
+{{> "contact"}}
 
 {{/post}}

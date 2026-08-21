@@ -4,8 +4,27 @@
     gap: 80px;
 } */
 
-.admin-title {
-    margin-bottom: 24px;
+.admin-hero {
+    margin-top: calc(-1 * var(--header-height));
+    margin-bottom: 60px;
+    height: 300px;
+
+    background-image: url("/assets/home-hero-bg.png");
+}
+
+.admin-hero__inner {
+    height: 100%;
+    padding-top: calc(var(--header-height) / 2) !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-hero h1 {
+    font-size: 80px;
+    line-height: 1em;
+    color: #ffffff;
 }
 
 /* Admin section
@@ -15,8 +34,22 @@
     margin-bottom: 60px;
 }
 
+.admin-section__title {
+    margin-bottom: 24px;
+}
+
+.admin-section label {
+    margin-bottom: 8px;
+}
+
+.admin-section .gh-check + label {
+    padding: 0;
+    color: var(--color-dark);
+}
+
 .admin-section input,
-.admin-section textarea {
+.admin-section textarea,
+.admin-section .gh-check + label {
     margin-bottom: 24px;
 }
 
@@ -25,13 +58,18 @@
 }
 
 .admin-section__inner {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 48px; */
+
+    display: flex;
+    flex-direction: column;
     gap: 48px;
 }
 
 .admin-section-code-wrapper {
     position: relative;
+    min-width: 0;
 }
 
 .admin-section-code-wrapper pre {
@@ -66,6 +104,10 @@
     color: inherit;
 
     cursor: pointer;
+}
+
+.admin-generate-button {
+    width: 100%;
 }
 
 .admin-copy-button:disabled {

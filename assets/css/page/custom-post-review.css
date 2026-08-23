@@ -99,12 +99,14 @@
     min-width: 0;
 }
 
-.mick-pick__media img {
+.mick-pick__media img,
+.mick-pick__media video,
+.mick-pick__media iframe {
     width: 100%;
 }
 
-.mick-pick__media video {
-    width: 100%;
+.mick-pick__media iframe {
+    aspect-ratio: 9/16;
 }
 
 .mick-pick__content {

@@ -1,13 +1,17 @@
 const mpAdminSection = document.querySelector(".mick-pick-generator");
-const mpForm = mpAdminSection.querySelector("#mick-pick-generator-form");
-const mpHasVideo = mpAdminSection.querySelector("#has-video");
+const mpForm = mpAdminSection.querySelector(".mick-pick-form");
+const mpLoadHtml = mpForm.querySelector("#load-html");
+const mpHasVideo = mpForm.querySelector("#has-video");
 const mpImageInput = mpForm.querySelector("#image");
 const mpVideoInput = mpForm.querySelector("#video");
 const mpVideoInputLabel = mpForm.querySelector("label[for='video']");
 const mpBodyInput = mpForm.querySelector("#body");
+const mpGenerateButton = mpAdminSection.querySelector(
+    ".mick-pick-generate-btn",
+);
 const mpGeneratedCode = mpAdminSection.querySelector("#generated-code");
 const mpCopyButton = mpAdminSection.querySelector("#copy-code");
-const mpPreview = mpAdminSection.querySelector(".admin-section-code-preview");
+const mpPreview = mpAdminSection.querySelector(".mick-pick-preview__inner");
 
 function bodyContent(transformedBody) {
     return `<div class="mick-pick__content">
@@ -106,7 +110,46 @@ mpVideoInput.required = false;
 
 mpCopyButton.style.display = "none";
 
-mpHasVideo?.addEventListener("change", (event) => {
+mpLoadHtml?.addEventListener("input", (event) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(event.target.value, "text/html");
+
+    // Image
+    const image = doc.querySelector(".mick-pick__media img");
+    const imageSrc = image?.getAttribute("src");
+
+    // Video
+    const video = doc.querySelector(".mick-pick__media video");
+
+    const videoSrc = video?.getAttribute("src");
+    const poster = video?.getAttribute("poster");
+
+    // Body text
+    const bodyText = [...doc.querySelectorAll(".mick-pick__body p")]
+        .map((p) => p.textContent.trim())
+        .join("\n");
+
+    if (imageSrc) {
+        mpVideoInput.style.display = "none";
+        mpVideoInputLabel.style.display = "none";
+        mpVideoInput.required = false;
+
+        mpHasVideo.checked = false;
+        mpImageInput.value = imageSrc;
+    } else if (videoSrc) {
+        mpVideoInput.style.display = "block";
+        mpVideoInputLabel.style.display = "block";
+        mpVideoInput.required = true;
+
+        mpHasVideo.checked = true;
+        mpImageInput.value = poster;
+        mpVideoInput.value = videoSrc;
+    }
+
+    mpBodyInput.value = bodyText;
+});
+
+mpHasVideo?.addEventListener("input", (event) => {
     if (event.target.checked) {
         mpVideoInput.style.display = "block";
         mpVideoInputLabel.style.display = "block";
@@ -118,7 +161,11 @@ mpHasVideo?.addEventListener("change", (event) => {
     }
 });
 
-mpForm?.addEventListener("submit", (event) => {
+mpForm?.addEventListener("change", (event) => {
+    console.log("change");
+});
+
+mpGenerateButton?.addEventListener("click", (event) => {
     event.preventDefault();
 
     const image = mpImageInput.value.trim();
@@ -140,6 +187,7 @@ mpForm?.addEventListener("submit", (event) => {
 
     mpPreview.innerHTML = html;
     mpCopyButton.style.display = "block";
+    mpCopyButton.disabled = false;
 
     mpCopyButton?.addEventListener("click", async () => {
         const code = html;

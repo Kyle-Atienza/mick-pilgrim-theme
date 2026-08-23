@@ -14,11 +14,7 @@ const starSvg = `<svg
 </svg>`;
 
 ratingElements.forEach((ratingElement) => {
-    console.log(ratingElement);
-
     const ratingTag = ratingElement.dataset.rating;
-
-    console.log(ratingTag);
 
     if (!ratingTag) {
         return;

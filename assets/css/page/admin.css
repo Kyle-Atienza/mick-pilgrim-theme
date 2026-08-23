@@ -21,6 +21,25 @@
     color: #ffffff;
 }
 
+/* Tabs
+/* ---------------------------------------------------------- */
+
+.tab-button {
+    margin-bottom: 24px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-button.active {
+    background-color: var(--color-primary);
+}
+
 /* Admin section
 /* ---------------------------------------------------------- */
 
@@ -52,10 +71,6 @@
 }
 
 .admin-section__inner {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px; */
-
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -83,64 +98,7 @@
 .admin-section-code {
     white-space: pre-wrap;
 }
-/* 
-.admin-copy-button {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-
-    padding: 8px 12px;
-
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-
-    background: var(--color-background);
-    color: inherit;
-
-    cursor: pointer;
-} */
 
 .admin-generate-button {
     width: 100%;
-}
-
-/* .admin-copy-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-} */
-
-/* Mick Pick form
-/* ---------------------------------------------------------- */
-
-.mick-pick-edit {
-    /* display: grid;
-    grid-template-columns: 1fr auto 1fr; */
-    align-items: center;
-    gap: 24px;
-}
-
-.mick-pick-edit__divider {
-    color: var(--color-dark);
-}
-
-.mick-pick-form,
-.mick-pick-code {
-    flex: 1;
-}
-
-.mick-pick-form > *:last-child,
-.mick-pick-code > *:last-child {
-    margin-bottom: 0px !important;
-}
-
-.mick-pick-code {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.mick-pick-preview {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }

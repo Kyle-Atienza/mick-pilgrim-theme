@@ -1,28 +1,32 @@
-const mpAdminSection = document.querySelector(".mick-pick-generator");
-const mpForm = mpAdminSection.querySelector(".mick-pick-form");
+const mpAdminSection = document.querySelector(".admin .quick-mick-pick");
+const mpForm = mpAdminSection.querySelector(".quick-mick-pick-form");
 const mpLoadHtml = mpForm.querySelector("#load-html");
 const mpHasVideo = mpForm.querySelector("#has-video");
 const mpImageInput = mpForm.querySelector("#image");
 const mpVideoInput = mpForm.querySelector("#video");
 const mpVideoInputLabel = mpForm.querySelector("label[for='video']");
 const mpBodyInput = mpForm.querySelector("#body");
+const mpInstagramInput = mpForm.querySelector("#instagram");
+const mpTiktokInput = mpForm.querySelector("#tiktok");
 const mpGenerateButton = mpAdminSection.querySelector(
-    ".mick-pick-generate-btn",
+    ".quick-mick-pick-generate-btn",
 );
 const mpGeneratedCode = mpAdminSection.querySelector("#generated-code");
 const mpCopyButton = mpAdminSection.querySelector("#copy-code");
-const mpPreview = mpAdminSection.querySelector(".mick-pick-preview__inner");
+const mpPreview = mpAdminSection.querySelector(
+    ".quick-mick-pick-preview__inner",
+);
 
-function bodyContent(transformedBody) {
-    return `<div class="mick-pick__content">
-                <div class="mick-pick__body">
+function bodyContent(transformedBody, instagram, tiktok) {
+    return `<div class="quick-mick-pick__content">
+                <div class="quick-mick-pick__body">
                     ${transformedBody}
                 </div>
 
-                <div class="mick-pick-socials">
+                <div class="quick-mick-pick-socials">
                     <span>SHARE THIS ARTICLE:</span>
-                    <div class="mick-pick-socials__links">
-                        <a class="mick-pick-social-link" href="#">
+                    <div class="quick-mick-pick-socials__links">
+                        <a class="quick-mick-pick-social-link" href="${instagram || "#"}">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="47"
@@ -45,7 +49,7 @@ function bodyContent(transformedBody) {
                                 />
                             </svg>
                         </a>
-                        <a class="mick-pick-social-link" href="#">
+                        <a class="quick-mick-pick-social-link" href="${tiktok || "#"}">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="47"
@@ -71,36 +75,53 @@ function bodyContent(transformedBody) {
                         </a>
                     </div>
                 </div>
-                <p class="mick-pick-message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
+                <p class="quick-mick-pick-message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
             </div>`;
 }
 
-function getImageTemplate(image, transformedBody) {
-    return `<div class="mick-pick">
-            <h3 class="mick-pick__title">
+function getImageTemplate(image, transformedBody, instagram, tiktok) {
+    return `<div class="quick-mick-pick">
+            <h3 class="quick-mick-pick__title">
                 Quick Mick Pick
             </h3>
-            <div class="mick-pick__media">
+            <div class="quick-mick-pick__media">
                 <img src="${image}" class="kg-image" alt="Mick Pick Image">
             </div>
-            ${bodyContent(transformedBody)}
+            ${bodyContent(transformedBody, instagram, tiktok)}
         </div>`;
 }
 
-function getVideoTemplate(image, video, transformedBody) {
-    return `<div class="mick-pick">
-            <h3 class="mick-pick__title">
+function getVideoTemplate(image, video, transformedBody, instagram, tiktok) {
+    return `<div class="quick-mick-pick">
+            <h3 class="quick-mick-pick__title">
                 Quick Mick Pick
             </h3>
-            <div class="mick-pick__media">
+            <div class="quick-mick-pick__media">
                 <video 
                     src="${video}" 
                     poster="${image}" 
                     preload="metadata" 
-                    controls
                 ></video>
+                <div class="quick-mick-pick__video-controls">
+                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            fill="currentColor"
+                            d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                    </svg>
+                    <svg
+                        class="pause-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M176 96C149.5 96 128 117.5 128 144L128 496C128 522.5 149.5 544 176 544L240 544C266.5 544 288 522.5 288 496L288 144C288 117.5 266.5 96 240 96L176 96zM400 96C373.5 96 352 117.5 352 144L352 496C352 522.5 373.5 544 400 544L464 544C490.5 544 512 522.5 512 496L512 144C512 117.5 490.5 96 464 96L400 96z"
+                        />
+                    </svg>
+                </div>
             </div>
-            ${bodyContent(transformedBody)}
+            ${bodyContent(transformedBody, instagram, tiktok)}
         </div>`;
 }
 
@@ -115,19 +136,32 @@ mpLoadHtml?.addEventListener("input", (event) => {
     const doc = parser.parseFromString(event.target.value, "text/html");
 
     // Image
-    const image = doc.querySelector(".mick-pick__media img");
+    const image = doc.querySelector(".quick-mick-pick__media img");
     const imageSrc = image?.getAttribute("src");
 
     // Video
-    const video = doc.querySelector(".mick-pick__media video");
+    const video = doc.querySelector(".quick-mick-pick__media video");
 
     const videoSrc = video?.getAttribute("src");
     const poster = video?.getAttribute("poster");
 
     // Body text
-    const bodyText = [...doc.querySelectorAll(".mick-pick__body p")]
+    const bodyText = [...doc.querySelectorAll(".quick-mick-pick__body p")]
         .map((p) => p.textContent.trim())
         .join("\n");
+
+    // Social links
+    const instagram = doc.querySelector(
+        ".quick-mick-pick-social-link:nth-of-type(1)",
+    );
+    const tiktok = doc.querySelector(
+        ".quick-mick-pick-social-link:nth-of-type(2)",
+    );
+
+    const instagramLink = instagram?.getAttribute("href");
+    const tiktokLink = tiktok?.getAttribute("href");
+
+    console.log(instagram, tiktok);
 
     if (imageSrc) {
         mpVideoInput.style.display = "none";
@@ -147,6 +181,8 @@ mpLoadHtml?.addEventListener("input", (event) => {
     }
 
     mpBodyInput.value = bodyText;
+    mpInstagramInput.value = instagramLink;
+    mpTiktokInput.value = tiktokLink;
 });
 
 mpHasVideo?.addEventListener("input", (event) => {
@@ -161,16 +197,14 @@ mpHasVideo?.addEventListener("input", (event) => {
     }
 });
 
-mpForm?.addEventListener("change", (event) => {
-    console.log("change");
-});
-
 mpGenerateButton?.addEventListener("click", (event) => {
     event.preventDefault();
 
     const image = mpImageInput.value.trim();
     const video = mpVideoInput.value.trim();
     const body = mpBodyInput.value;
+    const instagram = mpInstagramInput.value.trim();
+    const tiktok = mpTiktokInput.value.trim();
     const transformedBody = body
         .split("\n")
         .filter((b) => b)
@@ -180,9 +214,15 @@ mpGenerateButton?.addEventListener("click", (event) => {
     let html;
 
     if (mpHasVideo.checked) {
-        html = getVideoTemplate(image, video, transformedBody);
+        html = getVideoTemplate(
+            image,
+            video,
+            transformedBody,
+            instagram,
+            tiktok,
+        );
     } else {
-        html = getImageTemplate(image, transformedBody);
+        html = getImageTemplate(image, transformedBody, instagram, tiktok);
     }
 
     mpPreview.innerHTML = html;

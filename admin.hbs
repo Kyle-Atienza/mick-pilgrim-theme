@@ -6,72 +6,37 @@
     </div>
 </section>
 
-<section class="mick-pick-generator admin-section">
-    <div class="gh-container">
-        <h2 class="admin-section__title">Quick Mick Picks</h2>
-        <div class="admin-section__inner">
-            <div class="mick-pick-edit">
-                <form class="mick-pick-form">
-                    <label for="load-html">HTML</label>
-                    <textarea
-                        class="gh-textarea"
-                        type="text"
-                        name="load-html"
-                        id="load-html"
-                        required
-                        placeholder="Place valid Quick Mick Picks HTML content and fields will auto generate field values"
-                    ></textarea>
-                    <input
-                        class="gh-check"
-                        type="checkbox"
-                        name="has-video"
-                        id="has-video"
-                    />
-                    <label for="has-video">Has Video</label>
-                    <label for="image">Image</label>
-                    <input
-                        class="gh-input"
-                        type="url"
-                        name="image"
-                        id="image"
-                        placeholder="Enter image URL"
-                        required
-                    />
-                    <label for="video">Video</label>
-                    <input
-                        class="gh-input"
-                        type="url"
-                        name="video"
-                        id="video"
-                        placeholder="Enter video URL"
-                    />
-                    <label for="body">Body</label>
-                    <textarea
-                        class="gh-textarea"
-                        type="text"
-                        name="body"
-                        id="body"
-                        placeholder="Enter body content"
-                        required
-                    ></textarea>
-
-                </form>
-
-            </div>
-
-            <button type="submit" class="gh-button mick-pick-generate-btn">
-                Preview
-            </button>
-
-            <div class="mick-pick-preview">
-                <div class="mick-pick-preview__inner"></div>
-                <button type="button" class="gh-button" id="copy-code" disabled>
-                    Copy
-                </button>
-            </div>
-
-        </div>
+<div class="admin tabs">
+    <div class="gh-container tab-buttons">
+        <button class="tab-button gh-button active" data-tab="tab1">Quick Mick
+            Picks</button>
+        <button class="tab-button gh-button" data-tab="tab2">Youtube Embed</button>
     </div>
-</section>
 
-<script src="{{asset 'js/generateMickPick.js'}}"></script>
+    <div id="tab1" class="tab-content active">
+        {{> "admin/quick-mick-picks"}}
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <section>
+            <div class="gh-container">
+                Youtube embed
+            </div>
+        </section>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        Content for tab 3
+    </div>
+</div>
+
+
+<script>
+    const buttons = document.querySelectorAll(".tab-button"); const contents =
+    document.querySelectorAll(".tab-content"); buttons.forEach((button) => {
+    button.addEventListener("click", () => { const tabId = button.dataset.tab;
+    buttons.forEach((button) => { button.classList.remove("active"); });
+    contents.forEach((content) => { content.classList.remove("active"); });
+    button.classList.add("active");
+    document.getElementById(tabId).classList.add("active"); }); });
+</script>

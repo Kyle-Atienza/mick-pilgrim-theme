@@ -1,0 +1,86 @@
+<section class="admin-section quick-mick-pick">
+    <div class="gh-container">
+        <h2 class="admin-section__title">Quick Mick Picks</h2>
+        <div class="admin-section__inner">
+            <div class="quick-mick-pick-edit">
+                <form class="quick-mick-pick-form">
+                    <label for="load-html">HTML</label>
+                    <textarea
+                        class="gh-textarea"
+                        type="text"
+                        name="load-html"
+                        id="load-html"
+                        required
+                        placeholder="Place valid Quick Mick Picks HTML content and fields will auto generate field values"
+                    ></textarea>
+                    <input
+                        class="gh-check"
+                        type="checkbox"
+                        name="has-video"
+                        id="has-video"
+                    />
+                    <label for="has-video">Has Video</label>
+                    <label for="image">Image</label>
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="image"
+                        id="image"
+                        placeholder="Enter image URL"
+                        required
+                    />
+                    <label for="video">Video</label>
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="video"
+                        id="video"
+                        placeholder="Enter video URL"
+                    />
+                    <label for="body">Body</label>
+                    <textarea
+                        class="gh-textarea"
+                        type="text"
+                        name="body"
+                        id="body"
+                        placeholder="Enter body content"
+                        required
+                    ></textarea>
+                    <label for="instagram">Instagram URL</label>
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="instagram"
+                        id="instagram"
+                        placeholder="Enter Instagram URL"
+                    />
+                    <label for="tiktok">Tiktok URL</label>
+                    <input
+                        class="gh-input"
+                        type="url"
+                        name="tiktok"
+                        id="tiktok"
+                        placeholder="Enter tiktok URL"
+                    />
+                    <button
+                        type="submit"
+                        class="gh-button quick-mick-pick-generate-btn"
+                    >
+                        Preview
+                    </button>
+                </form>
+
+            </div>
+
+            <div class="quick-mick-pick-preview">
+                <div class="quick-mick-pick-preview__inner gh-content"></div>
+                <button type="button" class="gh-button" id="copy-code" disabled>
+                    Copy HTML
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="{{asset 'js/generateMickPick.js'}}"></script>

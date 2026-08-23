@@ -33,6 +33,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "page/custom-post-feature.css";
 @import "page/custom-post-review.css";
 @import "page/admin.css";
+@import "page/admin/quick-mick-picks.css";
 
 /* partials */
 @import "partials/contact.css";

@@ -1,0 +1,45 @@
+<div class="quick-mick-pick">
+    <h3 class="quick-mick-pick__title">
+        Quick Mick Pick
+    </h3>
+    <div class="quick-mick-pick__media">
+        {{!-- <img src="http://localhost:2368/content/images/2026/08/630206240_18413006092123739_1715128332285997336_n.jpg" class="kg-image" alt=""> --}}
+        <video 
+            src="http://localhost:2368/content/media/2026/08/mick.pilgrim_1771081548_3832431131564960773_3824403738.mp4" 
+            poster="http://localhost:2368/content/images/2026/08/630206240_18413006092123739_1715128332285997336_n.jpg" 
+            preload="metadata" 
+        >
+        </video>
+        <div class="quick-mick-pick__video-controls">
+            {{> "icons/play"}}
+            {{> "icons/pause"}}
+        </div>
+        {{!-- <iframe
+            src="https://www.youtube.com/embed/xpT6McP1XKM"
+            title="YouTube Short"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe> --}}
+    </div>
+    <div class="quick-mick-pick__content">
+        <div class="quick-mick-pick__body">
+            <p>In an interview with British Vogue, Margot Robbie said Emerald Fennell hopes her version of ‘Wuthering Heights’ will be this generation’s ‘Titanic’. </p><p>I actually think it has more in common with Baz Luhrmann’s ‘Romeo + Juliet’.</p>
+        </div>
+
+        <div class="quick-mick-pick-socials">
+            <span>SHARE THIS ARTICLE:</span>
+            <div class="quick-mick-pick-socials__links">
+                <a class="quick-mick-pick-social-link" href="#">
+                    {{> "icons/circle-instagram"}}
+                </a>
+                <a class="quick-mick-pick-social-link" href="#">
+                    {{> "icons/circle-tiktok"}}
+                </a>
+            </div>
+        </div>
+        <p class="quick-mick-pick-message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
+    </div>
+</div>
+
+<script src="{{asset 'js/quickMickPick.js'}}"></script>

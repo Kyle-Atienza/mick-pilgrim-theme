@@ -24,8 +24,14 @@
     height: unset;
     min-height: unset;
     display: flex;
+
+    cursor: pointer;
 }
 
 .posts-pagination svg {
     fill: #fbd246;
+}
+
+.posts-pagination .is-active {
+    color: var(--color-light);
 }

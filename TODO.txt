@@ -1,4 +1,4 @@
 [] pagination of reviews and features
 [] generate custom html of youtube
-[] tabs for admin content
-[] form
+[] share buttons
+[] allow to pick what post to be featured

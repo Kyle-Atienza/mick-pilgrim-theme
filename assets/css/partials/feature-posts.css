@@ -39,6 +39,7 @@
 }
 
 .feature-posts-item__image {
+    min-height: 1;
     width: 100%;
     height: 100%;
 

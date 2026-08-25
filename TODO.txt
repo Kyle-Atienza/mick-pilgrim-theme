@@ -1,4 +1,4 @@
 [] pagination of reviews and features
 [] generate custom html of youtube
 [] share buttons
-[] allow to pick what post to be featured
+[] recommended just looping

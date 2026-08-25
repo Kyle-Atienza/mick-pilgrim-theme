@@ -1,0 +1,18 @@
+<article class="feature-posts-item post-card">
+    <a class="feature-posts-item__inner" href="{{url}}">
+        {{#if feature_image}}
+            <img
+                class="feature-posts-item__image"
+                src="{{img_url feature_image size="m"}}"
+                alt="{{title}}"
+            />
+            <div class="feature-posts-item__image-overlay"></div>
+        {{/if}}
+        <div class="feature-posts-item__content">
+            <h3 class="feature-posts-item__title">
+                {{title}}
+            </h3>
+            <p class="feature-posts-item__excerpt">{{excerpt}}</p>
+        </div>
+    </a>
+</article>

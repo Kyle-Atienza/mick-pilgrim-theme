@@ -19,7 +19,7 @@
             {{#if featured}}
                 {{#get
                     "posts"
-                    filter="featured:true"
+                    filter="{{filter}}+featured:true"
                     sort="{{sort}}"
                     limit="{{limit}}"
                     include="tags"
@@ -72,5 +72,7 @@
     </div>
 </section>
 
-<script src="{{asset 'js/postsSort.js'}}"></script>
+{{#match pagination "==" "true"}}
+    <script src="{{asset 'js/postsSort.js'}}"></script>
+{{/match}}
 <script src="{{asset 'js/postsPagination.js'}}"></script>

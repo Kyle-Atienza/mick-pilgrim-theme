@@ -6,8 +6,6 @@ const mpImageInput = mpForm.querySelector("#image");
 const mpVideoInput = mpForm.querySelector("#video");
 const mpVideoInputLabel = mpForm.querySelector("label[for='video']");
 const mpBodyInput = mpForm.querySelector("#body");
-const mpInstagramInput = mpForm.querySelector("#instagram");
-const mpTiktokInput = mpForm.querySelector("#tiktok");
 const mpGenerateButton = mpAdminSection.querySelector(
     ".quick-mick-pick-generate-btn",
 );
@@ -17,7 +15,7 @@ const mpPreview = mpAdminSection.querySelector(
     ".quick-mick-pick-preview__inner",
 );
 
-function bodyContent(transformedBody, instagram, tiktok) {
+function bodyContent(transformedBody) {
     return `<div class="quick-mick-pick__content">
                 <div class="quick-mick-pick__body">
                     ${transformedBody}
@@ -57,7 +55,7 @@ function bodyContent(transformedBody, instagram, tiktok) {
             </div>`;
 }
 
-function getImageTemplate(image, transformedBody, instagram, tiktok) {
+function getImageTemplate(image, transformedBody) {
     return `<div class="quick-mick-pick">
             <h3 class="quick-mick-pick__title">
                 Quick Mick Pick
@@ -65,11 +63,11 @@ function getImageTemplate(image, transformedBody, instagram, tiktok) {
             <div class="quick-mick-pick__media">
                 <img src="${image}" class="kg-image" alt="Mick Pick Image">
             </div>
-            ${bodyContent(transformedBody, instagram, tiktok)}
+            ${bodyContent(transformedBody)}
         </div>`;
 }
 
-function getVideoTemplate(image, video, transformedBody, instagram, tiktok) {
+function getVideoTemplate(image, video, transformedBody) {
     return `<div class="quick-mick-pick">
             <h3 class="quick-mick-pick__title">
                 Quick Mick Pick
@@ -99,7 +97,7 @@ function getVideoTemplate(image, video, transformedBody, instagram, tiktok) {
                     </svg>
                 </div>
             </div>
-            ${bodyContent(transformedBody, instagram, tiktok)}
+            ${bodyContent(transformedBody)}
         </div>`;
 }
 
@@ -128,17 +126,6 @@ mpLoadHtml?.addEventListener("input", (event) => {
         .map((p) => p.textContent.trim())
         .join("\n");
 
-    // Social links
-    const instagram = doc.querySelector(
-        ".quick-mick-pick-social-link:nth-of-type(1)",
-    );
-    const tiktok = doc.querySelector(
-        ".quick-mick-pick-social-link:nth-of-type(2)",
-    );
-
-    const instagramLink = instagram?.getAttribute("href");
-    const tiktokLink = tiktok?.getAttribute("href");
-
     if (imageSrc) {
         mpVideoInput.style.display = "none";
         mpVideoInputLabel.style.display = "none";
@@ -157,8 +144,6 @@ mpLoadHtml?.addEventListener("input", (event) => {
     }
 
     mpBodyInput.value = bodyText;
-    mpInstagramInput.value = instagramLink;
-    mpTiktokInput.value = tiktokLink;
 });
 
 mpHasVideo?.addEventListener("input", (event) => {
@@ -179,8 +164,6 @@ mpGenerateButton?.addEventListener("click", (event) => {
     const image = mpImageInput.value.trim();
     const video = mpVideoInput.value.trim();
     const body = mpBodyInput.value;
-    const instagram = mpInstagramInput.value.trim();
-    const tiktok = mpTiktokInput.value.trim();
     const transformedBody = body
         .split("\n")
         .filter((b) => b)
@@ -190,15 +173,9 @@ mpGenerateButton?.addEventListener("click", (event) => {
     let html;
 
     if (mpHasVideo.checked) {
-        html = getVideoTemplate(
-            image,
-            video,
-            transformedBody,
-            instagram,
-            tiktok,
-        );
+        html = getVideoTemplate(image, video, transformedBody);
     } else {
-        html = getImageTemplate(image, transformedBody, instagram, tiktok);
+        html = getImageTemplate(image, transformedBody);
     }
 
     mpPreview.innerHTML = html;

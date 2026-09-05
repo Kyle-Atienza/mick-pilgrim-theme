@@ -41,6 +41,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "partials/feature-posts.css";
 @import "partials/post-rating.css";
 @import "partials/posts-pagination.css";
+@import "partials/share-post-dialog.css";
 
 .post-data {
     display: none;

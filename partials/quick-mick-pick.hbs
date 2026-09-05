@@ -30,14 +30,13 @@
         <div class="quick-mick-pick-socials">
             <span>SHARE THIS ARTICLE:</span>
             <div class="quick-mick-pick-socials__links">
-                <a class="quick-mick-pick-social-link" href="#">
-                    {{> "icons/circle-instagram"}}
-                </a>
-                <a class="quick-mick-pick-social-link" href="#">
-                    {{> "icons/circle-tiktok"}}
-                </a>
+                <button class="quick-mick-pick-social-link social-share-link" commandfor="share-post-dialog" command="show-modal">
+                    {{> "icons/circle-share"}}
+                </button>
             </div>
         </div>
         <p class="quick-mick-pick-message">Follow <a>@mick.pilgrim</a> for more film reviews and recommendations</p>
     </div>
 </div>
+
+{{> "share-post-dialog"}}

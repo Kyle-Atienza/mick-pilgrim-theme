@@ -7,8 +7,6 @@ quickMickPicks.forEach((pick) => {
     const playIcon = pick.querySelector("svg.play-icon");
     const pauseIcon = pick.querySelector("svg.pause-icon");
 
-    console.log(pauseIcon);
-
     if (!video || !playIcon || !pauseIcon) return;
 
     pauseIcon.style.display = "none";

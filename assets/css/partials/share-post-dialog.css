@@ -1,0 +1,120 @@
+/* Share post dialog
+/* ---------------------------------------------------------- */
+
+.share-post-dialog:open {
+    /* all: unset; reset ghost styling */
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    text-align: center;
+
+    border-radius: 24px;
+    padding: 40px 40px 52px 40px;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+
+    /* gap: 24px; */
+}
+
+.share-post-dialog::backdrop {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0px;
+}
+
+.share-post-dialog__actions {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    margin-bottom: 12px;
+}
+.share-post-dialog__close-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-post-dialog__close-button svg {
+    width: 32px;
+    height: 32px;
+}
+
+.share-post-dialog__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.share-post-dialog__title {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.share-post-dialog__description {
+    max-width: 440px;
+}
+
+.share-post-dialog__copy-link {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 4px;
+}
+
+.share-post-dialog__copy-link label {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.share-post-dialog__link-copied {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.share-post-dialog__link-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.share-post-dialog__link-input input {
+    border: none;
+}
+
+.share-post-dialog__link-input input:focus {
+    outline: none;
+}
+
+.share-post-dialog__copy-link input {
+    width: 100%;
+}
+
+.share-post-dialog__copy-link-icon {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-post-dialog__copy-link-icon svg {
+    width: 32px;
+    height: 32px;
+}

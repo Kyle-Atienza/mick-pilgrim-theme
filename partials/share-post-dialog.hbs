@@ -1,0 +1,31 @@
+<div class="dialog-overlay"></div>
+<dialog class="share-post-dialog" id="share-post-dialog">
+    <div class="share-post-dialog__actions">
+        <button class="share-post-dialog__close-button" commandfor="share-post-dialog" command="close">
+            {{> "icons/close"}}
+        </button>
+    </div>
+    <div class="share-post-dialog__header">
+        <h3 class="share-post-dialog__title">
+            Share this Mick Pick
+        </h3>
+        <p class="share-post-dialog__description">
+            Know someone who’d have thoughts? Send this review their way.
+        </p>
+    </div>
+    <div class="share-post-dialog__copy-link">
+        <label for="share-link">
+            Share your link
+            <span class="share-post-dialog__link-copied" hidden>Link copied!</span>
+        </label>
+        <div class="share-post-dialog__link-input gh-input">
+            <input type="url" readonly value="https://www.mickpick.com" id="share-link">
+            <button class="share-post-dialog__copy-link-icon">
+                {{> "icons/copy"}}
+            </button>
+        </div>
+    </div>
+    
+</dialog>
+
+<script src="{{asset 'js/sharePostDialog.js' }}"></script>

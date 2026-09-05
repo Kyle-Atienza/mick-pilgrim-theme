@@ -1,7 +1,7 @@
 <section class="review-posts posts {{class}}" data-limit="{{limit}}">
     <div class="review-posts__inner gh-container">
         {{#if title}}
-            <h3 class="review-posts__title">{{title}}</h3>
+            <h3 class="review-posts__title">{{title}} {{excludeId}} {{limit}}</h3>
         {{/if}}
         {{#match sort "==" "true"}}
             <div class="review-posts__sort">
@@ -20,7 +20,6 @@
                 {{#get
                     "posts"
                     filter="{{filter}}+featured:true"
-                    sort="{{sort}}"
                     limit="{{limit}}"
                     include="tags"
                 }}
@@ -32,7 +31,6 @@
                 {{#get
                     "posts"
                     filter="{{filter}}+id:-{{excludeId}}"
-                    sort="{{sort}}"
                     limit="{{limit}}"
                     include="tags"
                 }}
@@ -44,7 +42,6 @@
                 {{#get
                     "posts"
                     filter="{{filter}}"
-                    sort="{{sort}}"
                     limit="{{limit}}"
                     include="tags"
                 }}
@@ -73,6 +70,6 @@
 </section>
 
 {{#match pagination "==" "true"}}
-    <script src="{{asset 'js/postsSort.js'}}"></script>
+    {{!-- <script src="{{asset 'js/postsPagination.js'}}"></script> --}}
 {{/match}}
-<script src="{{asset 'js/postsPagination.js'}}"></script>
+<script src="{{asset 'js/postsSort.js'}}"></script>

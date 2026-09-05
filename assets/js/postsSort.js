@@ -52,5 +52,9 @@ if (sortSelect && postGrid) {
 
     sortSelect.addEventListener("change", (event) => {
         sortPosts(event.target.value);
+        if (renderPage) {
+            // rerender paginated cards
+            renderPage();
+        }
     });
 }

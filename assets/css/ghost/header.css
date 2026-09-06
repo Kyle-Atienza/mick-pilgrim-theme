@@ -64,19 +64,21 @@
 
 .gh-head-menu .nav {
     display: inline-flex;
+    gap: 44px;
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
 }
 
 .gh-head-menu .nav li {
-    margin: 0 44px 0 0;
+    /* margin: 0 44px 0 0; */
     padding: 0;
 }
 
 .gh-head-menu .nav a {
     display: inline-block;
     padding: 5px 0;
+    position: relative;
 
     font-size: 20px;
     font-weight: 500;
@@ -84,12 +86,7 @@
     text-transform: uppercase;
 }
 
-.gh-head-menu .nav-current a {
-    position: relative;
-    /* box-shadow: 0 -1px 0 0 currentcolor inset; */
-}
-
-.gh-head-menu .nav-current a::after {
+.gh-head-menu .nav-current a[data-active="true"]::after {
     content: "";
     position: absolute;
     top: 100%;

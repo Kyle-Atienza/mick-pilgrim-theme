@@ -1,0 +1,19 @@
+<section class="recommended-review-posts review-posts posts" data-current-post-id="{{excludeId}}">
+    <div class="review-posts__inner gh-container">
+        <h3 class="review-posts__title">You might like</h3>
+        <div class="review-posts-items">
+            {{!-- filter="{{filter}}+id:-{{excludeId}}" --}}
+            {{#get
+                "posts"
+                filter="{{filter}}"
+                include="tags"
+            }}
+                {{#foreach posts}}
+                    {{> "review-post"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>
+
+<script src="{{asset 'js/recommendedReviewPosts.js'}}"></script>

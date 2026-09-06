@@ -1,8 +1,7 @@
-[] recommended just looping
 [] mobile responsiveness
 [] test reviews
 [] question - same share dialog copy for feature page?
-
+[] header indicators
 
 Good to have
 [] standardize styles on custom embeds

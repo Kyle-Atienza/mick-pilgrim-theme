@@ -26,6 +26,8 @@
         </div>
         <div class="gh-content post-body">
             {{content}}
+
+            {{> "share-post-dialog"}}
         </div>
         {{!-- <div class="post-youtube-embed">
             <div class="post-youtube-embed__inner">
@@ -73,3 +75,4 @@
 {{/post}}
 
 <script src="{{asset 'js/customPostFeature.js'}}"></script>
+<script src="{{asset 'js/socialSharePost.js'}}"></script>

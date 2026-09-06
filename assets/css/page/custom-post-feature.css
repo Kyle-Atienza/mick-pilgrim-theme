@@ -121,13 +121,20 @@
     gap: 10px;
 }
 
-.post-youtube-embed-social-link {
+.post-youtube-embed-socials-link {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+
     width: 48px;
     aspect-ratio: 1/1;
 }
 
-.post-youtube-embed-social-link svg {
+.post-youtube-embed-socials-link svg {
     color: #fc4534;
+    width: 48px;
+    height: 48px;
 }
 
 .post-youtube-embed__message {

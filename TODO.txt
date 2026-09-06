@@ -1,4 +1,8 @@
-[] generate custom html of youtube
 [] recommended just looping
 [] mobile responsiveness
 [] test reviews
+[] question - same share dialog copy for feature page?
+
+
+Good to have
+[] standardize styles on custom embeds

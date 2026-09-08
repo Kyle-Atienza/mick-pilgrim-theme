@@ -93,6 +93,16 @@
                 "type": "text",
                 "description": "Displays about me photo on home page",
                 "group": "homepage"
+            },
+            "about_me_image": {
+                "type": "image",
+                "description": "Displays about me photo on home page",
+                "group": "homepage"
+            },
+            "about_me_text": {
+                "type": "text",
+                "description": "Displays about me text on home page",
+                "group": "homepage"
             }
         }
     }

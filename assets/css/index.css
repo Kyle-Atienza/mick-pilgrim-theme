@@ -42,6 +42,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "partials/post-rating.css";
 @import "partials/posts-pagination.css";
 @import "partials/share-post-dialog.css";
+@import "partials/home/hero.css";
 @import "partials/home/about-me.css";
 
 .post-data {

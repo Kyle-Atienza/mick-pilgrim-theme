@@ -1,0 +1,22 @@
+<section class="hero">
+    {{! <div class="hero__inner gh-container">
+        <span>Special Feature Section</span>
+        <h1>Lorem Ipsum</h1>
+    </div> }}
+
+    {{#get
+        "pages" filter="slug:config-home-hero" limit="1"
+        as |config-home-hero|
+    }}
+        {{#config-home-hero}}
+            <img
+                alt="hero-image"
+                src="{{{feature_image}}}"
+                class="hero__background"
+            />
+            <div class="hero__inner new">
+                {{{content}}}
+            </div>
+        {{/config-home-hero}}
+    {{/get}}
+</section>

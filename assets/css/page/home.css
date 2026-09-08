@@ -1,38 +1,3 @@
-/* Hero
-/* ---------------------------------------------------------- */
-
-.hero {
-    height: 100vh;
-    max-height: 840px;
-    margin-top: calc(-1 * var(--header-height));
-
-    background-image: url("/assets/home-hero-bg.png");
-}
-
-.hero__inner {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero {
-    color: var(--color-light);
-}
-
-.hero span {
-    font-size: 24px;
-    font-family: var(--font-alt);
-    font-style: italic;
-}
-
-.hero h1 {
-    font-size: 80px;
-}
-
 /* Features
 /* ---------------------------------------------------------- */
 

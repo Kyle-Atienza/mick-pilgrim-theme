@@ -1,0 +1,43 @@
+/* Hero
+/* ---------------------------------------------------------- */
+
+.hero {
+    height: 100vh;
+    max-height: 840px;
+    margin-top: calc(-1 * var(--header-height));
+    position: relative;
+    color: var(--color-light);
+
+    /* background-image: url("/assets/home-hero-bg.png"); */
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero__inner {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero__inner p:nth-child(1) {
+    font-size: 24px;
+    font-family: var(--font-alt);
+    font-style: italic;
+}
+
+.hero__inner h2:nth-child(2) {
+    font-size: 80px;
+}

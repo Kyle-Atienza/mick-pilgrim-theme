@@ -15,11 +15,12 @@
 }
 
 .review-hero h1 {
-    font-size: 80px;
+    /* font-size: 80px; */
+    font-size: clamp(50px, 5vw, 80px);
     line-height: 1em;
     color: #ffffff;
 }
 
 .review-post-grid {
-    padding-block: 112px 200px !important;
+    padding-block: 88px 200px 112px !important;
 }

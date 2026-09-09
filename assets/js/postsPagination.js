@@ -1,9 +1,6 @@
 const postsList = document.querySelector(".posts");
 const itemsPerPage = postsList.dataset.limit;
-const paginationList = document.querySelector(".posts-pagination ul");
-
-console.log(itemsPerPage);
-// if (!itemsPerPage) return;
+const paginationLists = document.querySelectorAll(".posts-pagination ul");
 
 let currentPage = 1;
 
@@ -16,7 +13,7 @@ function createIconButton(svgMarkup, onClick, disabled = false) {
     return button;
 }
 
-function renderPagination(postCards) {
+function renderPagination(paginationList, postCards) {
     if (!paginationList || !postCards.length) return;
 
     const totalPages = Math.ceil(postCards.length / itemsPerPage);
@@ -132,7 +129,9 @@ function renderPage() {
         post.style.display = show ? "" : "none";
     });
 
-    renderPagination(postCards);
+    paginationLists.forEach((paginationList) => {
+        renderPagination(paginationList, postCards);
+    });
 }
 
 renderPage();

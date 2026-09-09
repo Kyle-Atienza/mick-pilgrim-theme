@@ -1,5 +1,6 @@
 .review-posts {
     padding-block: 72px;
+    position: relative;
 
     background-color: var(--color-dark);
 }
@@ -7,7 +8,7 @@
 .review-posts__inner {
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 48px;
 }
 
 .review-posts__title {
@@ -20,6 +21,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+}
+
+.review-posts__header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding-block: 24px;
+    background-color: var(--color-dark);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-posts__header .posts-pagination {
+    display: none;
 }
 
 /* Sort
@@ -111,12 +128,10 @@
 }
 
 .review-post__title {
-    padding: 32px;
+    /* padding: 32px; */
+    padding: 11cqw;
     text-transform: uppercase;
     z-index: 1;
-}
-
-.review-post__title {
     /* font-size: clamp(32px, 4vw, 52px); */
     /* font-size: 52px; */
     font-size: 13.5cqw;
@@ -142,7 +157,7 @@
 }
 
 @media (max-width: 768px) {
-    .review-posts-items {
+    .review-post:not(.review-post-grid) .review-posts-items {
         grid-template-columns: repeat(1, 1fr);
     }
 }

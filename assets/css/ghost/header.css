@@ -6,7 +6,8 @@
 }
 
 .gh-head {
-    padding: 3vmin 4vmin;
+    padding-block: 52px;
+    padding-inline: 72px;
     font-size: 1.6rem;
     line-height: 1.3em;
     background: inherit;
@@ -27,6 +28,8 @@
     grid-gap: 40px;
     grid-template-columns: 1fr 4fr 1fr;
     grid-auto-flow: row dense;
+    align-content: center;
+    height: 100%;
 }
 
 /* Brand
@@ -144,6 +147,7 @@
     justify-content: center;
     width: 33px;
     height: 33px;
+    color: var(--color-light);
 }
 
 .gh-burger-inner {
@@ -262,11 +266,23 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-left: 0;
 }
 
+@media (max-width: 1400px) {
+    .gh-head {
+        padding-inline: 32px;
+    }
+}
+
+/* @media (max-width: 1200px) {
+    .gh-head-brand img {
+        height: 50%;
+    }
+} */
+
 /* Mobile Menu
 /* ---------------------------------------------------------- */
 /* IDs needed to ensure sufficient specificity */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .gh-burger {
         display: inline-block;
     }
@@ -292,7 +308,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         font-size: 2.2rem;
     }
     #gh-head .gh-head-logo img {
-        max-height: 40px;
+        max-height: 52px;
     }
     #gh-head .gh-head-menu {
         align-self: center;

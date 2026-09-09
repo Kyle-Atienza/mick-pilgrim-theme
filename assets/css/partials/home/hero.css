@@ -7,8 +7,6 @@
     margin-top: calc(-1 * var(--header-height));
     position: relative;
     color: var(--color-light);
-
-    /* background-image: url("/assets/home-hero-bg.png"); */
 }
 
 .hero__background {
@@ -33,11 +31,13 @@
 }
 
 .hero__inner p:nth-child(1) {
-    font-size: 24px;
+    /* font-size: 24px; */
+    font-size: clamp(16px, 2.5vw, 24px);
     font-family: var(--font-alt);
     font-style: italic;
 }
 
 .hero__inner h2:nth-child(2) {
-    font-size: 80px;
+    /* font-size: 80px; */
+    font-size: clamp(40px, 8vw, 80px);
 }

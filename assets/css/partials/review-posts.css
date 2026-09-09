@@ -71,6 +71,7 @@
 
 .review-post {
     aspect-ratio: 4/5;
+    container-type: inline-size;
 }
 
 .review-post__wrapper {
@@ -116,7 +117,9 @@
 }
 
 .review-post__title {
-    font-size: 52px;
+    /* font-size: clamp(32px, 4vw, 52px); */
+    /* font-size: 52px; */
+    font-size: 13.5cqw;
     font-weight: 600;
     color: var(--color-light);
     line-height: 1em;
@@ -130,4 +133,16 @@
 .review-posts-cta__link {
     color: #fc4534 !important;
     box-shadow: inset 0 0 0 3px #8c0406 !important;
+}
+
+@media (max-width: 992px) {
+    .review-posts-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .review-posts-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

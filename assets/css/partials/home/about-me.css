@@ -8,6 +8,7 @@
 
 .about-me__inner {
     display: flex;
+    align-items: center;
     gap: 88px;
 }
 
@@ -52,26 +53,8 @@
     margin-bottom: 24px;
 }
 
-/* .about-me__inner.new {
-    display: grid;
-    grid-template-columns: 9fr 5fr;
-    grid-template-areas: "image subtitle" "image title" "image content";
-    column-gap: 88px;
-    row-gap: 12px;
+@media (max-width: 990px) {
+    .about-me__inner {
+        flex-direction: column;
+    }
 }
-.about-me__inner.new figure:nth-child(1) {
-    grid-area: image;
-}
-
-.about-me__inner.new p:nth-child(2) {
-    grid-area: subtitle;
-    min-height: 0;
-}
-
-.about-me__inner.new h2:nth-child(3) {
-    grid-area: title;
-}
-
-.about-me__inner.new .about-me__content:nth-child(4) {
-    grid-area: content;
-} */

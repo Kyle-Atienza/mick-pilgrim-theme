@@ -228,6 +228,10 @@
         margin: 0 auto;
     }
 
+    .gh-content .quick-mick-pick__content {
+        gap: 24px;
+    }
+
     .gh-content .quick-mick-pick__body {
         font-size: 24px;
     }

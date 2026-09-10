@@ -282,7 +282,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 /* ---------------------------------------------------------- */
 /* IDs needed to ensure sufficient specificity */
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
     .gh-burger {
         display: inline-block;
     }

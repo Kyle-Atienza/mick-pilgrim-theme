@@ -1,12 +1,6 @@
 .posts-pagination {
     color: #fbd246;
     font-size: 20px;
-
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-    background-color: var(--color-dark);
-    padding-block: 24px;
 }
 
 .posts-pagination ul {
@@ -40,4 +34,14 @@
 
 .posts-pagination .is-active {
     color: var(--color-light);
+}
+
+@media (max-width: 1200px) {
+    .posts-pagination {
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        background-color: var(--color-dark);
+        padding-block: 24px;
+    }
 }

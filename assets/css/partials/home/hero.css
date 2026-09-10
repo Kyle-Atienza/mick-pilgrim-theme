@@ -4,7 +4,7 @@
 .hero {
     height: 100vh;
     max-height: 840px;
-    margin-top: calc(-1 * var(--header-height));
+    /* margin-top: calc(-1 * var(--header-height)); */
     position: relative;
     color: var(--color-light);
 }

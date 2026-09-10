@@ -1,5 +1,4 @@
 .custom-post-review-hero {
-    margin-top: calc(-1 * var(--header-height));
     height: 724px;
 
     position: relative;

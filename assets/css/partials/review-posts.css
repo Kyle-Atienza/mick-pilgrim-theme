@@ -55,12 +55,6 @@
     color: var(--color-light);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    padding-block: 24px;
-    background-color: var(--color-dark);
 }
 
 .review-posts__sort select,
@@ -95,6 +89,16 @@
 
 .review-posts__sort option {
     padding: 16px;
+}
+
+@media (max-width: 1200px) {
+    .review-posts__sort {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding-block: 24px;
+        background-color: var(--color-dark);
+    }
 }
 
 /* Post grid item

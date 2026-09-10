@@ -1,5 +1,4 @@
 .feature-hero {
-    margin-top: calc(-1 * var(--header-height));
     height: 300px;
 
     background-image: url("/assets/textured-bg.png");

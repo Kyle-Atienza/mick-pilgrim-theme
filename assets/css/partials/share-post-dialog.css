@@ -17,7 +17,7 @@
     /* display: flex; */
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 60px);
     max-width: 800px;
 
     /* gap: 24px; */
@@ -62,7 +62,8 @@
 }
 
 .share-post-dialog__description {
-    max-width: 440px;
+    display: flex;
+    flex-direction: column;
 }
 
 .share-post-dialog__copy-link {
@@ -117,4 +118,25 @@
 .share-post-dialog__copy-link-icon svg {
     width: 32px;
     height: 32px;
+}
+
+@media (max-width: 800px) {
+    .share-post-dialog:open {
+        padding: 24px 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .share-post-dialog__title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .share-post-dialog__copy-link label {
+        font-size: 16px;
+    }
+
+    .share-post-dialog__link-copied {
+        font-size: 12px;
+    }
 }

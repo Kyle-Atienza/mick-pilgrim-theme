@@ -15,7 +15,8 @@
 }
 
 .feature-hero h1 {
-    font-size: 80px;
+    /* font-size: 80px; */
+    font-size: clamp(50px, 5vw, 80px);
     line-height: 1em;
     color: #ffffff;
 }

@@ -1,5 +1,7 @@
 [] mobile responsiveness
 [] question - same share dialog copy for feature page?
 
+ongoing responsiveness on feature page
+
 Good to have
 [] standardize styles on custom embeds

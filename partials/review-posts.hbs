@@ -3,24 +3,18 @@
         {{#if title}}
             <h3 class="review-posts__title">{{title}}</h3>
         {{/if}}
-        <div class="review-posts__header">
-            {{#match sort "==" "true"}}
-                <div class="review-posts__sort">
-                    Sort by 
-                    <select>
-                        <option value="latest">Latest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="rating">Top Rated</option>
-                        <option value="title-asc">Films A-Z</option>
-                        <option value="title-desc">Films Z-A</option>
-                    </select>
-                </div>
-            {{/match}}
-            {{#match pagination "==" "true"}}
-                {{> "posts-pagination"}}
-            {{/match}}
-
-        </div>
+        {{#match sort "==" "true"}}
+            <div class="review-posts__sort">
+                Sort by 
+                <select>
+                    <option value="latest">Latest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="title-asc">Films A-Z</option>
+                    <option value="title-desc">Films Z-A</option>
+                </select>
+            </div>
+        {{/match}}
         <div class="review-posts-items">
             {{#if featured}}
                 {{#get

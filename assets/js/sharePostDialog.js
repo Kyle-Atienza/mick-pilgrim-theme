@@ -1,4 +1,5 @@
 const sharePostDialog = document.querySelector(".share-post-dialog");
+const sharePostDialogInput = sharePostDialog.querySelector("input");
 const sharePostDialogComponents = {
     close: sharePostDialog.querySelector(".share-post-dialog__close-button"),
     copy: sharePostDialog.querySelector(".share-post-dialog__copy-link-icon"),
@@ -7,6 +8,8 @@ const sharePostDialogComponents = {
     ),
 };
 const { close, copy, linkCopied } = sharePostDialogComponents;
+
+sharePostDialogInput.value = window.location.href;
 
 let copyTimeout;
 

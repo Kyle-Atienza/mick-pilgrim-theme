@@ -20,6 +20,8 @@
     width: calc(100% - 60px);
     max-width: 800px;
 
+    margin: 0 !important;
+
     /* gap: 24px; */
 }
 

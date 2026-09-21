@@ -21,6 +21,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+
+    overflow: auto;
 }
 
 .review-posts__header {
@@ -35,7 +37,7 @@
     align-items: center;
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     .review-posts-items {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -45,7 +47,7 @@
     .review-posts:not(.review-post-grid) .review-posts-items {
         grid-template-columns: repeat(1, 1fr);
     }
-}
+} */
 
 /* Sort
 /* ---------------------------------------------------------- */
@@ -107,6 +109,10 @@
 .review-post {
     aspect-ratio: 4/5;
     container-type: inline-size;
+
+    display: flex;
+
+    min-width: 290px;
 }
 
 .review-post__wrapper {

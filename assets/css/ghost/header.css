@@ -76,6 +76,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 300ms ease;
+}
+
+.gh-head-menu.is-hidden {
+    transform: translateY(-120%);
 }
 
 .gh-head-menu .nav {
@@ -386,6 +391,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .gh-head-open #gh-head .gh-head-actions,
     .gh-head-open #gh-head .gh-head-menu {
         display: flex;
+        transform: translateY(0);
     }
 }
 
